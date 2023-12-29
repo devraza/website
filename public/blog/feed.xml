@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+	<title>Blog Posts</title>
+	<subtitle>All of the posts for my blog</subtitle>
+	<link href="https://blog.devraza.duckdns.org/blog/feed.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://blog.devraza.duckdns.org/blog/"/>
+	<updated>2023-12-29T00:00:00+00:00</updated>
+	<id>https://blog.devraza.duckdns.org/blog/feed.xml</id>
+	<entry xml:lang="en">
+		<title>Setting up Zola on NixOS</title>
+		<published>2023-12-29T00:00:00+00:00</published>
+		<updated>2023-12-29T00:00:00+00:00</updated>
+		<link href="https://blog.devraza.duckdns.org/blog/setting-up-nixos/" type="text/html"/>
+		<id>https://blog.devraza.duckdns.org/blog/setting-up-nixos/</id>
+		<content type="html"></content>
+	</entry>
+</feed>
