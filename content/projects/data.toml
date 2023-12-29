@@ -3,7 +3,7 @@ name = "particle.nvim"
 desc = "A gorgeously soft colorscheme for Neovim."
 tags = ["neovim"]
 links = [
-  { name = "git", url = "git.devraza.duckdns.org/devraza/particle.nvim" },
+  { name = "git", url = "https://git.devraza.duckdns.org/devraza/particle.nvim" },
 ]
 
 [[project]]
