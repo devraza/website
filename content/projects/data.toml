@@ -1,17 +1,23 @@
 [[project]]
-name = ""
-desc = ""
-tags = ["", ""]
+name = "particle.nvim"
+desc = "A gorgeously soft colorscheme for Neovim."
+tags = ["neovim"]
 links = [
-  { name = "", url = "" },
-  { name = "", url = "" },
+  { name = "git", url = "git.devraza.duckdns.org/devraza/particle.nvim" },
 ]
 
 [[project]]
-name = ""
-desc = ""
-tags = ["", ""]
+name = "Ambition"
+desc = "A textual fast-paced 2D MMORPG written in Rust."
+tags = ["rust", "bevy", "mmorpg"]
 links = [
-  { name = "", url = "" },
-  { name = "", url = "" },
+  { name = "git", url = "https://git.devraza.duckdns.org/devraza/ambition" },
+]
+
+[[project]]
+name = "DianciEmacs"
+desc = "A minimal and elegant Emacs configuration framework. **[Deprecated]**"
+tags = ["emacs", "config"]
+links = [
+  { name = "git", url = "https://git.devraza.duckdns.org/devraza/dianciemacs" },
 ]
