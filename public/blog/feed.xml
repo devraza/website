@@ -2,16 +2,16 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
 	<title>Blog Posts</title>
 	<subtitle>All of the posts for my blog</subtitle>
-	<link href="https://blog.devraza.duckdns.org/blog/feed.xml" rel="self" type="application/atom+xml"/>
-    <link href="https://blog.devraza.duckdns.org/blog/"/>
+	<link href="https://devraza.duckdns.org/blog/feed.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://devraza.duckdns.org/blog/"/>
 	<updated>2023-12-29T00:00:00+00:00</updated>
-	<id>https://blog.devraza.duckdns.org/blog/feed.xml</id>
+	<id>https://devraza.duckdns.org/blog/feed.xml</id>
 	<entry xml:lang="en">
 		<title>Setting up Zola on NixOS</title>
 		<published>2023-12-29T00:00:00+00:00</published>
 		<updated>2023-12-29T00:00:00+00:00</updated>
-		<link href="https://blog.devraza.duckdns.org/blog/setting-up-nixos/" type="text/html"/>
-		<id>https://blog.devraza.duckdns.org/blog/setting-up-nixos/</id>
+		<link href="https://devraza.duckdns.org/blog/setting-up-nixos/" type="text/html"/>
+		<id>https://devraza.duckdns.org/blog/setting-up-nixos/</id>
 		<content type="html">&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;a class=&quot;zola-anchor&quot; href=&quot;#introduction&quot; aria-label=&quot;Anchor link for: introduction&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
 &lt;p&gt;&lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;getzola.org&quot;&gt;Zola&lt;&#x2F;a&gt; is a static site generator (similarly to the infamous &lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;gohugo.io&quot;&gt;Hugo&lt;&#x2F;a&gt;, which you may have already heard of) and is written in Rust.
 It also happens to be the framework that this site is built on!&lt;&#x2F;p&gt;

@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://blog.devraza.duckdns.org/</loc>
+        <loc>https://devraza.duckdns.org/</loc>
     </url>
     <url>
-        <loc>https://blog.devraza.duckdns.org/blog/</loc>
+        <loc>https://devraza.duckdns.org/blog/</loc>
     </url>
     <url>
-        <loc>https://blog.devraza.duckdns.org/blog/setting-up-nixos/</loc>
+        <loc>https://devraza.duckdns.org/blog/setting-up-nixos/</loc>
         <lastmod>2023-12-29</lastmod>
     </url>
     <url>
-        <loc>https://blog.devraza.duckdns.org/categories/</loc>
+        <loc>https://devraza.duckdns.org/categories/</loc>
     </url>
     <url>
-        <loc>https://blog.devraza.duckdns.org/categories/guides/</loc>
+        <loc>https://devraza.duckdns.org/categories/guides/</loc>
     </url>
     <url>
-        <loc>https://blog.devraza.duckdns.org/projects/</loc>
+        <loc>https://devraza.duckdns.org/projects/</loc>
     </url>
     <url>
-        <loc>https://blog.devraza.duckdns.org/tags/</loc>
+        <loc>https://devraza.duckdns.org/tags/</loc>
     </url>
     <url>
-        <loc>https://blog.devraza.duckdns.org/tags/nixos/</loc>
+        <loc>https://devraza.duckdns.org/tags/nixos/</loc>
     </url>
     <url>
-        <loc>https://blog.devraza.duckdns.org/tags/zola/</loc>
+        <loc>https://devraza.duckdns.org/tags/zola/</loc>
     </url>
 </urlset>
