@@ -55,7 +55,7 @@ For the purposes of this guide, zola can be installed either as a system or user
         
         &lt;p&gt;&lt;strong&gt;Custom themes&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
         
-        &lt;p&gt;You can also make your own if that better suits you (give the &lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;getzola.org&#x2F;documentation&quot;&gt;documentation&lt;&#x2F;a&gt; a read if that&#x27;s what you&#x27;re looking for).&lt;&#x2F;p&gt;
+        &lt;p&gt;You can also make your own theme if that better suits you (I recommend giving the &lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;getzola.org&#x2F;documentation&quot;&gt;documentation&lt;&#x2F;a&gt; if so).&lt;&#x2F;p&gt;
 
     &lt;&#x2F;div&gt;
 &lt;&#x2F;blockquote&gt;&lt;h2 id=&quot;setting-up-nginx&quot;&gt;Setting up NGINX&lt;a class=&quot;zola-anchor&quot; href=&quot;#setting-up-nginx&quot; aria-label=&quot;Anchor link for: setting-up-nginx&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
@@ -85,6 +85,18 @@ For the following snippet, we&#x27;ll assume this is at &lt;code&gt;&#x2F;var&#x
 &lt;li&gt;A way to showcase your projects (&lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;blog.devraza.duckdns.org&#x2F;projects&quot;&gt;as I&#x27;ve also done&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;Hosting documentation (check out &lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;www.getzola.org&#x2F;themes&#x2F;adidoks&#x2F;&quot;&gt;this Zola theme&lt;&#x2F;a&gt;, for example)&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-</content>
+&lt;blockquote class=&quot;callout question&quot;&gt;
+    
+    &lt;div class=&quot;icon&quot;&gt;
+        &lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;20&quot; height=&quot;20&quot;&gt;&lt;path d=&quot;M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM11 15H13V17H11V15ZM13 13.3551V14H11V12.5C11 11.9477 11.4477 11.5 12 11.5C12.8284 11.5 13.5 10.8284 13.5 10C13.5 9.17157 12.8284 8.5 12 8.5C11.2723 8.5 10.6656 9.01823 10.5288 9.70577L8.56731 9.31346C8.88637 7.70919 10.302 6.5 12 6.5C13.933 6.5 15.5 8.067 15.5 10C15.5 11.5855 14.4457 12.9248 13 13.3551Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+    &lt;&#x2F;div&gt;
+    &lt;div class=&quot;content&quot;&gt;
+        
+        &lt;p&gt;&lt;strong&gt;Help, my changes aren&amp;#x27;t sticking!&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+        
+        &lt;p&gt;When you make new markdown files (or any other changes to the structure of your site), remember to run &lt;code&gt;zola build&lt;&#x2F;code&gt; in your site directory (&lt;code&gt;&#x2F;var&#x2F;lib&#x2F;blog&lt;&#x2F;code&gt;) for the changes to &lt;em&gt;build&lt;&#x2F;em&gt; into the actual site.&lt;&#x2F;p&gt;
+
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;blockquote&gt;</content>
 	</entry>
 </feed>

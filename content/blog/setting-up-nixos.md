@@ -57,7 +57,7 @@ Zola actually has a section of its website showcasing several community-made the
 Simply choose a theme that you like (demos are usually available for each theme listed) and follow its appropriate documentation to set it up - this site uses a version of the [serene theme](https://www.getzola.org/themes/serene/) with my custom colours.
 
 {% note(header="Custom themes") %}
-You can also make your own if that better suits you (give the [documentation](https://getzola.org/documentation) a read if that's what you're looking for).
+You can also make your own theme if that better suits you (I recommend giving the [documentation](https://getzola.org/documentation) if so).
 {% end %}
 
 ## Setting up NGINX
@@ -89,3 +89,7 @@ You should now have your own static site built with Zola! You can use this for a
 - Your personal blog (as I've done)
 - A way to showcase your projects ([as I've also done](https://blog.devraza.duckdns.org/projects)
 - Hosting documentation (check out [this Zola theme](https://www.getzola.org/themes/adidoks/), for example)
+
+{% question(header="Help, my changes aren't sticking!") %}
+When you make new markdown files (or any other changes to the structure of your site), remember to run `zola build` in your site directory (`/var/lib/blog`) for the changes to *build* into the actual site.
+{% end %}
