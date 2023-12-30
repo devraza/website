@@ -5,14 +5,16 @@ template = 'home.html'
 lang = 'en'
 +++
 
-I'm a moderately skilled programmer and beginner in cybersecurity.
-[NixOS](https://nixos.org) is my operating system of choice, and [neovim](https://neovim.org) is my text editor.
+I'm a moderately skilled programmer, beginner in the field of cybersecurity and aspiring graphic designer.
+[NixOS](https://nixos.org) is my operating system of choice, and [quark.nvim](https://git.devraza.duckdns.org/devraza/quark.nvim) (my bespoke distribution of [neovim](https://neovim.io)) is my text editor.
 
-I also happen to be a devoted rustacean and a follower of the self-hosted way of life.
+I also happen to be a devoted rustacean and a devout follower of the self-hosted way of life.
 
-Programming language skills:
+My skills in programming language I've used so far are as follows:
 - Advanced: `Python`
 - Intermediate: `Rust`, `Go`, `Nix`, `E-Lisp`
 - Beginner: `Julia`, `Lua`
 
-Other things I can also work with include `git`, `linux`, `inkscape`, and `GIMP`.
+However, I consider myself able to work to a reasonable degree with any modern programming language.
+
+Other *tools* that I can work with include `git`, `linux`, `inkscape`, and `GIMP`.
