@@ -87,7 +87,7 @@ For the following snippet, we'll assume this is at `/var/lib/blog`.
 # Finishing up
 You should now have your own static site built with Zola! You can use this for a bunch of things, like:
 - Your personal blog (as I've done)
-- A way to showcase your projects ([as I've also done](https://blog.devraza.duckdns.org/projects)
+- A way to showcase your projects ([as I've also done](https://blog.devraza.duckdns.org/projects))
 - Hosting documentation (check out [this Zola theme](https://www.getzola.org/themes/adidoks/), for example)
 
 {% question(header="Help, my changes aren't sticking!") %}
