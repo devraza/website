@@ -7,7 +7,11 @@
         <loc>https://devraza.duckdns.org/blog/</loc>
     </url>
     <url>
-        <loc>https://devraza.duckdns.org/blog/setting-up-nixos/</loc>
+        <loc>https://devraza.duckdns.org/blog/selfhost-search-engine/</loc>
+        <lastmod>2023-12-31</lastmod>
+    </url>
+    <url>
+        <loc>https://devraza.duckdns.org/blog/setting-up-zola-nixos/</loc>
         <lastmod>2023-12-29</lastmod>
     </url>
     <url>
@@ -24,6 +28,15 @@
     </url>
     <url>
         <loc>https://devraza.duckdns.org/tags/nixos/</loc>
+    </url>
+    <url>
+        <loc>https://devraza.duckdns.org/tags/privacy/</loc>
+    </url>
+    <url>
+        <loc>https://devraza.duckdns.org/tags/searxng/</loc>
+    </url>
+    <url>
+        <loc>https://devraza.duckdns.org/tags/selfhosted/</loc>
     </url>
     <url>
         <loc>https://devraza.duckdns.org/tags/zola/</loc>

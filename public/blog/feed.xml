@@ -4,14 +4,109 @@
 	<subtitle>All of the posts for my blog</subtitle>
 	<link href="https://devraza.duckdns.org/blog/feed.xml" rel="self" type="application/atom+xml"/>
     <link href="https://devraza.duckdns.org/blog/"/>
-	<updated>2023-12-29T00:00:00+00:00</updated>
+	<updated>2023-12-31T00:00:00+00:00</updated>
 	<id>https://devraza.duckdns.org/blog/feed.xml</id>
+	<entry xml:lang="en">
+		<title>Host your own private search engine with SearXNG</title>
+		<published>2023-12-31T00:00:00+00:00</published>
+		<updated>2023-12-31T00:00:00+00:00</updated>
+		<link href="https://devraza.duckdns.org/blog/selfhost-search-engine/" type="text/html"/>
+		<id>https://devraza.duckdns.org/blog/selfhost-search-engine/</id>
+		<content type="html">&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;a class=&quot;zola-anchor&quot; href=&quot;#introduction&quot; aria-label=&quot;Anchor link for: introduction&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+&lt;p&gt;&lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;docs.searxng.org&#x2F;&quot;&gt;SearXNG&lt;&#x2F;a&gt;, put in its own words, is a &#x27;free internet metasearch engine&#x27;.
+Note that it describes itself as a &lt;em&gt;metasearch&lt;&#x2F;em&gt; engine specifically - unlike your traditional search engine like Google or Bing, SearXNG does things a little bit differently:
+It aggregrates the results produced by search services like those aforementioned, and feeds them back to you.&lt;&#x2F;p&gt;
+&lt;p&gt;Because of this key detail and a great deal of effort by those who&#x27;ve helped shape it, SearXNG protects your privacy, and does so very well:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Private data from requests going to the search services it aggregrates results from is removed&lt;&#x2F;li&gt;
+&lt;li&gt;It does &lt;strong&gt;not&lt;&#x2F;strong&gt; forward &lt;em&gt;anything&lt;&#x2F;em&gt; to any third parties through search services&lt;&#x2F;li&gt;
+&lt;li&gt;Private data is &lt;em&gt;also&lt;&#x2F;em&gt; removed from requests going to the results pages&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Furthermore, SearXNG can be configured to use &lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;torproject.org&quot;&gt;Tor&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;However, the aspect of privacy isn&#x27;t the only great selling feature of the engine; from my use of the engine so far, it&#x27;s also great at...searching (is that a surprise?). The fact that it&#x27;s a metasearch engine plays a key role in this,
+as it provides SearXNG the ability to pull content more efficiently and gives &lt;em&gt;you&lt;&#x2F;em&gt; the ability to further tailor your experience.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;setting-up-searxng&quot;&gt;Setting up SearXNG&lt;a class=&quot;zola-anchor&quot; href=&quot;#setting-up-searxng&quot; aria-label=&quot;Anchor link for: setting-up-searxng&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+&lt;h2 id=&quot;installing-the-service&quot;&gt;Installing the service&lt;a class=&quot;zola-anchor&quot; href=&quot;#installing-the-service&quot; aria-label=&quot;Anchor link for: installing-the-service&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;As you may have expected if you&#x27;ve used NixOS for a while, searxng is packaged &lt;em&gt;and&lt;&#x2F;em&gt; has a service on NixOS. This makes setting it up just that much easier.&lt;&#x2F;p&gt;
+&lt;p&gt;To get started, place somewhere in your &lt;em&gt;system&lt;&#x2F;em&gt; config the following:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;nix&quot; style=&quot;background-color:#151515;color:#e8e8d3;&quot; class=&quot;language-nix &quot;&gt;&lt;code class=&quot;language-nix&quot; data-lang=&quot;nix&quot;&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# ...
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;services&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;searx &lt;&#x2F;span&gt;&lt;span&gt;= {
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;enable &lt;&#x2F;span&gt;&lt;span&gt;= true;
+&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;settings &lt;&#x2F;span&gt;&lt;span&gt;= {
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;server &lt;&#x2F;span&gt;&lt;span&gt;= {
+&lt;&#x2F;span&gt;&lt;span&gt;          &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;port &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cf6a4c;&quot;&gt;8888&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;          &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;bind_address &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;&amp;quot;127.0.0.1&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;          &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;secret_key &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;&amp;quot;@SEARX_SECRET_KEY@&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;          &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;base_url &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;&amp;quot;https:&#x2F;&#x2F;search.devraza.duckdns.org&#x2F;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# replace with wherever you want to host yours
+&lt;&#x2F;span&gt;&lt;span&gt;        };
+&lt;&#x2F;span&gt;&lt;span&gt;      };
+&lt;&#x2F;span&gt;&lt;span&gt;    };
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# ...
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The snippet above starts the &lt;code&gt;searx&lt;&#x2F;code&gt; systemd service for listening on port &lt;code&gt;8888&lt;&#x2F;code&gt;, and assumes a &lt;code&gt;base_url&lt;&#x2F;code&gt; of &lt;code&gt;https:&#x2F;&#x2F;search.devraza.duckdns.org&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Now that we&#x27;ve got the actual &lt;code&gt;searx&lt;&#x2F;code&gt; instance running, we can now set up a reverse proxy allowing the service to be accessed remotely (whether this is within your local network or across the internet is up to you).&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;setting-up-a-reverse-proxy&quot;&gt;Setting up a reverse proxy&lt;a class=&quot;zola-anchor&quot; href=&quot;#setting-up-a-reverse-proxy&quot; aria-label=&quot;Anchor link for: setting-up-a-reverse-proxy&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;what-is-a-reverse-proxy&quot;&gt;What is a reverse proxy?&lt;a class=&quot;zola-anchor&quot; href=&quot;#what-is-a-reverse-proxy&quot; aria-label=&quot;Anchor link for: what-is-a-reverse-proxy&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;Before I get started with the technical details of setting this up, I&#x27;d like to briefly clarify what a reverse proxy exactly is (to my understanding).&lt;&#x2F;p&gt;
+&lt;p&gt;Let&#x27;s get the wikipedia definition of reverse proxy out of the way first:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[...] a reverse proxy is an application that sits in front of back-end applications and forwards client requests to those applications. [...]&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;However, you might be confused as to what this actually means; I&#x27;ll give an example of the usage of reverse proxies to better explain this:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Suppose you&#x27;ve got a few services running on a server (for demonstration purposes, let&#x27;s name these &lt;code&gt;x&lt;&#x2F;code&gt;, &lt;code&gt;y&lt;&#x2F;code&gt; and &lt;code&gt;z&lt;&#x2F;code&gt;), each running on their own unique port.&lt;&#x2F;li&gt;
+&lt;li&gt;Assuming you had a domain, and wanted to access all of these services from their own unique sub-domains (e.g. &lt;code&gt;x.yourdomain.com&lt;&#x2F;code&gt;, &lt;code&gt;y.yourdomain.com&lt;&#x2F;code&gt; and &lt;code&gt;z.yourdomain.com&lt;&#x2F;code&gt;), you would have to use a reverse proxy.&lt;&#x2F;li&gt;
+&lt;li&gt;This reverse proxy would take in requests from clients going to sub-domains, and forward these requests to the appropriate port on your machine for the service being requested.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;The concept should be clear now, if it wasn&#x27;t already.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;using-nginx-to-set-up-the-reverse-proxy&quot;&gt;Using NGINX to set up the reverse proxy&lt;a class=&quot;zola-anchor&quot; href=&quot;#using-nginx-to-set-up-the-reverse-proxy&quot; aria-label=&quot;Anchor link for: using-nginx-to-set-up-the-reverse-proxy&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;NGINX is a popular web server that supports the creation of virtual hosts and the usage of reverse proxies. To accomodate our &lt;code&gt;searx&lt;&#x2F;code&gt; instance, we append the following to our NixOS server configuration:&lt;&#x2F;p&gt;
+&lt;pre data-linenos data-lang=&quot;nix&quot; style=&quot;background-color:#151515;color:#e8e8d3;&quot; class=&quot;language-nix &quot;&gt;&lt;code class=&quot;language-nix&quot; data-lang=&quot;nix&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;1&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;2&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# ...
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;3&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;services&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;nginx &lt;&#x2F;span&gt;&lt;span&gt;= {
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;4&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;enable &lt;&#x2F;span&gt;&lt;span&gt;= true;
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;5&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# any extra configuration here
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;6&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;virtualHosts &lt;&#x2F;span&gt;&lt;span&gt;= {
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;7&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;&amp;quot;search&amp;quot; &lt;&#x2F;span&gt;&lt;span&gt;= { &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# this can be anything, being an arbitrary identifier
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;8&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;forceSSL &lt;&#x2F;span&gt;&lt;span&gt;= true;
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;9&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;serverName &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;&amp;quot;search.yourdomain.com&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# replace this with whatever you&amp;#39;re serving from
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;10&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# SearX proxy
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;11&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;locations&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;&amp;quot;&#x2F;&amp;quot; &lt;&#x2F;span&gt;&lt;span&gt;= {
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;&lt;mark style=&quot;background-color:#010101;&quot;&gt;12&lt;&#x2F;mark&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;mark style=&quot;background-color:#010101;&quot;&gt;&lt;span&gt;          &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;proxyPass &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;&amp;quot;http:&#x2F;&#x2F;${toString &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;config&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;services&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;searx&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;settings&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;server&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;bind_address&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;}:${toString &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;config&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;services&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;searx&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;settings&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;server&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;port&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;}&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;&#x2F;mark&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;13&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;          &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;proxyWebsockets &lt;&#x2F;span&gt;&lt;span&gt;= true;
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;14&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;          &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;recommendedProxySettings &lt;&#x2F;span&gt;&lt;span&gt;= true;
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;15&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;        };
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;16&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;      };
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;17&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;    };
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;18&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;  };
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;19&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# ...
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;20&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;blockquote class=&quot;callout note&quot;&gt;
+    
+    &lt;div class=&quot;icon&quot;&gt;
+        &lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;20&quot; height=&quot;20&quot;&gt;&lt;path d=&quot;M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM11 7H13V9H11V7ZM11 11H13V17H11V11Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+    &lt;&#x2F;div&gt;
+    &lt;div class=&quot;content&quot;&gt;
+        
+        &lt;p&gt;&lt;strong&gt;Note&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+        
+        &lt;p&gt;The expression highlighted above is used to dynamically adjust the location NGINX will forward requests to, depending on your &lt;code&gt;searx&lt;&#x2F;code&gt; config&lt;&#x2F;p&gt;
+
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;After saving your changes and rebuilding your server&#x27;s system configuration (as usual), you should have a working &lt;em&gt;private&lt;&#x2F;em&gt; instance of SearXNG that you can access using the &lt;code&gt;serverName&lt;&#x2F;code&gt; you&#x27;ve given it.&lt;&#x2F;p&gt;
+&lt;p&gt;Set your browser to use this as your search engine using the relevant documentation (with Firefox this is as easy as right-clicking on the URL after opening up the page and clicking a button). Enjoy!&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Setting up Zola on NixOS</title>
 		<published>2023-12-29T00:00:00+00:00</published>
 		<updated>2023-12-29T00:00:00+00:00</updated>
-		<link href="https://devraza.duckdns.org/blog/setting-up-nixos/" type="text/html"/>
-		<id>https://devraza.duckdns.org/blog/setting-up-nixos/</id>
+		<link href="https://devraza.duckdns.org/blog/setting-up-zola-nixos/" type="text/html"/>
+		<id>https://devraza.duckdns.org/blog/setting-up-zola-nixos/</id>
 		<content type="html">&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;a class=&quot;zola-anchor&quot; href=&quot;#introduction&quot; aria-label=&quot;Anchor link for: introduction&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
 &lt;p&gt;&lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;getzola.org&quot;&gt;Zola&lt;&#x2F;a&gt; is a static site generator (similarly to the infamous &lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;gohugo.io&quot;&gt;Hugo&lt;&#x2F;a&gt;, which you may have already heard of) and is written in Rust.
 It also happens to be the framework that this site is built on!&lt;&#x2F;p&gt;
@@ -23,24 +118,24 @@ For the purposes of this guide, zola can be installed either as a system or user
 &lt;ul&gt;
 &lt;li&gt;As a system package:&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;pre data-lang=&quot;nix&quot; class=&quot;language-nix z-code&quot;&gt;&lt;code class=&quot;language-nix&quot; data-lang=&quot;nix&quot;&gt;&lt;span class=&quot;z-source z-nix&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-entity z-function z-2 z-nix&quot;&gt;{&lt;&#x2F;span&gt; &lt;span class=&quot;z-variable z-parameter z-function z-1 z-nix&quot;&gt;pkgs&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword z-operator z-nix&quot;&gt;,&lt;&#x2F;span&gt; &lt;span class=&quot;z-keyword z-operator z-nix&quot;&gt;... &lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-entity z-function z-nix&quot;&gt;}&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-function z-nix&quot;&gt;:&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-attrset-or-function z-nix&quot;&gt;{&lt;&#x2F;span&gt;
-    &lt;span class=&quot;z-comment z-line z-number-sign z-nix&quot;&gt;# ...&lt;&#x2F;span&gt;
-    &lt;span class=&quot;z-entity z-other z-attribute-name z-multipart z-nix&quot;&gt;environment&lt;&#x2F;span&gt;.&lt;span class=&quot;z-entity z-other z-attribute-name z-multipart z-nix&quot;&gt;systemPackages&lt;&#x2F;span&gt; &lt;span class=&quot;z-keyword z-operator z-bind z-nix&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-keyword z-other z-nix&quot;&gt;with&lt;&#x2F;span&gt; &lt;span class=&quot;z-variable z-parameter z-name z-nix&quot;&gt;pkgs&lt;&#x2F;span&gt;; &lt;span class=&quot;z-punctuation z-definition z-list z-nix&quot;&gt;[&lt;&#x2F;span&gt;
-        &lt;span class=&quot;z-variable z-parameter z-name z-nix&quot;&gt;zola&lt;&#x2F;span&gt; &lt;span class=&quot;z-comment z-line z-number-sign z-nix&quot;&gt;# Append the package name to the list&lt;&#x2F;span&gt;
-    &lt;span class=&quot;z-punctuation z-definition z-list z-nix&quot;&gt;]&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-bind z-nix&quot;&gt;;&lt;&#x2F;span&gt;
-    &lt;span class=&quot;z-comment z-line z-number-sign z-nix&quot;&gt;# ...&lt;&#x2F;span&gt;
-&lt;span class=&quot;z-punctuation z-definition z-attrset z-nix&quot;&gt;}&lt;&#x2F;span&gt;
+&lt;pre data-lang=&quot;nix&quot; style=&quot;background-color:#151515;color:#e8e8d3;&quot; class=&quot;language-nix &quot;&gt;&lt;code class=&quot;language-nix&quot; data-lang=&quot;nix&quot;&gt;&lt;span&gt;{ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;pkgs&lt;&#x2F;span&gt;&lt;span&gt;, ... }: {
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# ...
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;environment&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;systemPackages &lt;&#x2F;span&gt;&lt;span&gt;= with &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;pkgs&lt;&#x2F;span&gt;&lt;span&gt;; [
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;zola &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# Append the package name to the list
+&lt;&#x2F;span&gt;&lt;span&gt;    ];
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# ...
+&lt;&#x2F;span&gt;&lt;span&gt;}
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;ul&gt;
 &lt;li&gt;As a user package (with home-manager):&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;pre data-lang=&quot;nix&quot; class=&quot;language-nix z-code&quot;&gt;&lt;code class=&quot;language-nix&quot; data-lang=&quot;nix&quot;&gt;&lt;span class=&quot;z-source z-nix&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-entity z-function z-2 z-nix&quot;&gt;{&lt;&#x2F;span&gt; &lt;span class=&quot;z-variable z-parameter z-function z-1 z-nix&quot;&gt;pkgs&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword z-operator z-nix&quot;&gt;,&lt;&#x2F;span&gt; &lt;span class=&quot;z-keyword z-operator z-nix&quot;&gt;... &lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-entity z-function z-nix&quot;&gt;}&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-function z-nix&quot;&gt;:&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-attrset-or-function z-nix&quot;&gt;{&lt;&#x2F;span&gt;
-    &lt;span class=&quot;z-comment z-line z-number-sign z-nix&quot;&gt;# ...&lt;&#x2F;span&gt;
-    &lt;span class=&quot;z-entity z-other z-attribute-name z-multipart z-nix&quot;&gt;home&lt;&#x2F;span&gt;.&lt;span class=&quot;z-entity z-other z-attribute-name z-multipart z-nix&quot;&gt;packages&lt;&#x2F;span&gt; &lt;span class=&quot;z-keyword z-operator z-bind z-nix&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-keyword z-other z-nix&quot;&gt;with&lt;&#x2F;span&gt; &lt;span class=&quot;z-variable z-parameter z-name z-nix&quot;&gt;pkgs&lt;&#x2F;span&gt;; &lt;span class=&quot;z-punctuation z-definition z-list z-nix&quot;&gt;[&lt;&#x2F;span&gt;
-        &lt;span class=&quot;z-variable z-parameter z-name z-nix&quot;&gt;zola&lt;&#x2F;span&gt; &lt;span class=&quot;z-comment z-line z-number-sign z-nix&quot;&gt;# Append the package name to the list&lt;&#x2F;span&gt;
-    &lt;span class=&quot;z-punctuation z-definition z-list z-nix&quot;&gt;]&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-bind z-nix&quot;&gt;;&lt;&#x2F;span&gt;
-    &lt;span class=&quot;z-comment z-line z-number-sign z-nix&quot;&gt;# ...&lt;&#x2F;span&gt;
-&lt;span class=&quot;z-punctuation z-definition z-attrset z-nix&quot;&gt;}&lt;&#x2F;span&gt;
+&lt;pre data-lang=&quot;nix&quot; style=&quot;background-color:#151515;color:#e8e8d3;&quot; class=&quot;language-nix &quot;&gt;&lt;code class=&quot;language-nix&quot; data-lang=&quot;nix&quot;&gt;&lt;span&gt;{ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;pkgs&lt;&#x2F;span&gt;&lt;span&gt;, ... }: {
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# ...
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;home&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;packages &lt;&#x2F;span&gt;&lt;span&gt;= with &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;pkgs&lt;&#x2F;span&gt;&lt;span&gt;; [
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;zola &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# Append the package name to the list
+&lt;&#x2F;span&gt;&lt;span&gt;    ];
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# ...
+&lt;&#x2F;span&gt;&lt;span&gt;}
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;Now that &lt;code&gt;zola&lt;&#x2F;code&gt; itself is installed, we can move on setting up the pages it serves - continue reading...&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;setting-up-a-theme&quot;&gt;Setting up a theme&lt;a class=&quot;zola-anchor&quot; href=&quot;#setting-up-a-theme&quot; aria-label=&quot;Anchor link for: setting-up-a-theme&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
@@ -62,21 +157,21 @@ For the purposes of this guide, zola can be installed either as a system or user
 &lt;p&gt;After selecting a theme (or making your own) you should now have a directory somewhere on your server containing your static site.
 For the following snippet, we&#x27;ll assume this is at &lt;code&gt;&#x2F;var&#x2F;lib&#x2F;blog&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;nginx.com&quot;&gt;NGINX&lt;&#x2F;a&gt; is a popular webserver which we&#x27;re going to use for the purposes of hosting and serving our site. To do so, append the following somewhere in your configuration:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;nix&quot; class=&quot;language-nix z-code&quot;&gt;&lt;code class=&quot;language-nix&quot; data-lang=&quot;nix&quot;&gt;&lt;span class=&quot;z-source z-nix&quot;&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-nix&quot;&gt;# ...&lt;&#x2F;span&gt;
-&lt;span class=&quot;z-punctuation z-definition z-attrset-or-function z-nix&quot;&gt;{&lt;&#x2F;span&gt;
-    &lt;span class=&quot;z-comment z-line z-number-sign z-nix&quot;&gt;# ...&lt;&#x2F;span&gt;
-    &lt;span class=&quot;z-entity z-other z-attribute-name z-multipart z-nix&quot;&gt;services&lt;&#x2F;span&gt;.&lt;span class=&quot;z-entity z-other z-attribute-name z-multipart z-nix&quot;&gt;nginx&lt;&#x2F;span&gt; &lt;span class=&quot;z-keyword z-operator z-bind z-nix&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-attrset-or-function z-nix&quot;&gt;{&lt;&#x2F;span&gt;
-        &lt;span class=&quot;z-entity z-other z-attribute-name z-multipart z-nix&quot;&gt;enable&lt;&#x2F;span&gt; &lt;span class=&quot;z-keyword z-operator z-bind z-nix&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-constant z-language z-nix&quot;&gt;true&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-bind z-nix&quot;&gt;;&lt;&#x2F;span&gt;
-        &lt;span class=&quot;z-entity z-other z-attribute-name z-multipart z-nix&quot;&gt;virtualHosts&lt;&#x2F;span&gt; &lt;span class=&quot;z-keyword z-operator z-bind z-nix&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-attrset-or-function z-nix&quot;&gt;{&lt;&#x2F;span&gt;
-            &lt;span class=&quot;z-string z-quoted z-double z-nix&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-double z-start z-nix&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;blog&lt;span class=&quot;z-punctuation z-definition z-string z-double z-end z-nix&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-keyword z-operator z-bind z-nix&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-definition z-attrset-or-function z-nix&quot;&gt;{&lt;&#x2F;span&gt;
-                &lt;span class=&quot;z-entity z-other z-attribute-name z-multipart z-nix&quot;&gt;forceSSL&lt;&#x2F;span&gt; &lt;span class=&quot;z-keyword z-operator z-bind z-nix&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-constant z-language z-nix&quot;&gt;true&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-bind z-nix&quot;&gt;;&lt;&#x2F;span&gt;
-                &lt;span class=&quot;z-entity z-other z-attribute-name z-multipart z-nix&quot;&gt;serverName&lt;&#x2F;span&gt; &lt;span class=&quot;z-keyword z-operator z-bind z-nix&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-string z-quoted z-double z-nix&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-double z-start z-nix&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;blog.devraza.duckdns.org&lt;span class=&quot;z-punctuation z-definition z-string z-double z-end z-nix&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-bind z-nix&quot;&gt;;&lt;&#x2F;span&gt; &lt;span class=&quot;z-comment z-line z-number-sign z-nix&quot;&gt;# replace this with wherever your site will be&lt;&#x2F;span&gt;
-                &lt;span class=&quot;z-entity z-other z-attribute-name z-multipart z-nix&quot;&gt;root&lt;&#x2F;span&gt; &lt;span class=&quot;z-keyword z-operator z-bind z-nix&quot;&gt;=&lt;&#x2F;span&gt; &lt;span class=&quot;z-string z-quoted z-double z-nix&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-double z-start z-nix&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&#x2F;var&#x2F;lib&#x2F;blog&#x2F;public&lt;span class=&quot;z-punctuation z-definition z-string z-double z-end z-nix&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-bind z-nix&quot;&gt;;&lt;&#x2F;span&gt; &lt;span class=&quot;z-comment z-line z-number-sign z-nix&quot;&gt;# the path to the `public` folder in our site directory&lt;&#x2F;span&gt;
-            &lt;span class=&quot;z-punctuation z-definition z-attrset z-nix&quot;&gt;}&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-bind z-nix&quot;&gt;;&lt;&#x2F;span&gt;
-        &lt;span class=&quot;z-punctuation z-definition z-attrset z-nix&quot;&gt;}&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-bind z-nix&quot;&gt;;&lt;&#x2F;span&gt;
-    &lt;span class=&quot;z-punctuation z-definition z-attrset z-nix&quot;&gt;}&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-terminator z-bind z-nix&quot;&gt;;&lt;&#x2F;span&gt;
-    &lt;span class=&quot;z-comment z-line z-number-sign z-nix&quot;&gt;# ...&lt;&#x2F;span&gt;
-&lt;span class=&quot;z-punctuation z-definition z-attrset z-nix&quot;&gt;}&lt;&#x2F;span&gt;
+&lt;pre data-lang=&quot;nix&quot; style=&quot;background-color:#151515;color:#e8e8d3;&quot; class=&quot;language-nix &quot;&gt;&lt;code class=&quot;language-nix&quot; data-lang=&quot;nix&quot;&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# ...
+&lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# ...
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;services&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;nginx &lt;&#x2F;span&gt;&lt;span&gt;= {
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;enable &lt;&#x2F;span&gt;&lt;span&gt;= true;
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;virtualHosts &lt;&#x2F;span&gt;&lt;span&gt;= {
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;&amp;quot;blog&amp;quot; &lt;&#x2F;span&gt;&lt;span&gt;= {
+&lt;&#x2F;span&gt;&lt;span&gt;                &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;forceSSL &lt;&#x2F;span&gt;&lt;span&gt;= true;
+&lt;&#x2F;span&gt;&lt;span&gt;                &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;serverName &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;&amp;quot;blog.devraza.duckdns.org&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# replace this with wherever your site will be
+&lt;&#x2F;span&gt;&lt;span&gt;                &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;root &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;&amp;quot;&#x2F;var&#x2F;lib&#x2F;blog&#x2F;public&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# the path to the `public` folder in our site directory
+&lt;&#x2F;span&gt;&lt;span&gt;            };
+&lt;&#x2F;span&gt;&lt;span&gt;        };
+&lt;&#x2F;span&gt;&lt;span&gt;    };
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# ...
+&lt;&#x2F;span&gt;&lt;span&gt;}
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;h1 id=&quot;finishing-up&quot;&gt;Finishing up&lt;a class=&quot;zola-anchor&quot; href=&quot;#finishing-up&quot; aria-label=&quot;Anchor link for: finishing-up&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
 &lt;p&gt;You should now have your own static site built with Zola! You can use this for a bunch of things, like:&lt;&#x2F;p&gt;
