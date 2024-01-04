@@ -15,7 +15,14 @@
         <lastmod>2023-12-29</lastmod>
     </url>
     <url>
+        <loc>https://devraza.duckdns.org/blog/the-effect-of-hoaxes/</loc>
+        <lastmod>2024-01-04</lastmod>
+    </url>
+    <url>
         <loc>https://devraza.duckdns.org/categories/</loc>
+    </url>
+    <url>
+        <loc>https://devraza.duckdns.org/categories/cybersecurity/</loc>
     </url>
     <url>
         <loc>https://devraza.duckdns.org/categories/guides/</loc>
@@ -25,6 +32,9 @@
     </url>
     <url>
         <loc>https://devraza.duckdns.org/tags/</loc>
+    </url>
+    <url>
+        <loc>https://devraza.duckdns.org/tags/hoax/</loc>
     </url>
     <url>
         <loc>https://devraza.duckdns.org/tags/nixos/</loc>
@@ -37,6 +47,9 @@
     </url>
     <url>
         <loc>https://devraza.duckdns.org/tags/selfhosted/</loc>
+    </url>
+    <url>
+        <loc>https://devraza.duckdns.org/tags/social-engineering/</loc>
     </url>
     <url>
         <loc>https://devraza.duckdns.org/tags/zola/</loc>
