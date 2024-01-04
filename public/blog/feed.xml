@@ -150,7 +150,7 @@ For the purposes of this guide, zola can be installed either as a system or user
         
         &lt;p&gt;&lt;strong&gt;Custom themes&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
         
-        &lt;p&gt;You can also make your own theme if that better suits you (I recommend giving the &lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;getzola.org&#x2F;documentation&quot;&gt;documentation&lt;&#x2F;a&gt; if so).&lt;&#x2F;p&gt;
+        &lt;p&gt;You can also make your own theme if that better suits you (I recommend giving the &lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;getzola.org&#x2F;documentation&quot;&gt;documentation&lt;&#x2F;a&gt; a read if so).&lt;&#x2F;p&gt;
 
     &lt;&#x2F;div&gt;
 &lt;&#x2F;blockquote&gt;&lt;h2 id=&quot;setting-up-nginx&quot;&gt;Setting up NGINX&lt;a class=&quot;zola-anchor&quot; href=&quot;#setting-up-nginx&quot; aria-label=&quot;Anchor link for: setting-up-nginx&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
