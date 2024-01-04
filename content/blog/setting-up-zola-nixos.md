@@ -57,7 +57,7 @@ Zola actually has a section of its website showcasing several community-made the
 Simply choose a theme that you like (demos are usually available for each theme listed) and follow its appropriate documentation to set it up - this site uses a version of the [serene theme](https://www.getzola.org/themes/serene/) with my custom colours.
 
 {% note(header="Custom themes") %}
-You can also make your own theme if that better suits you (I recommend giving the [documentation](https://getzola.org/documentation) if so).
+You can also make your own theme if that better suits you (I recommend giving the [documentation](https://getzola.org/documentation) a read if so).
 {% end %}
 
 ## Setting up NGINX

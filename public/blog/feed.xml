@@ -177,7 +177,7 @@ For the following snippet, we&#x27;ll assume this is at &lt;code&gt;&#x2F;var&#x
 &lt;p&gt;You should now have your own static site built with Zola! You can use this for a bunch of things, like:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;Your personal blog (as I&#x27;ve done)&lt;&#x2F;li&gt;
-&lt;li&gt;A way to showcase your projects (&lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;blog.devraza.duckdns.org&#x2F;projects&quot;&gt;as I&#x27;ve also done&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;A way to showcase your projects (&lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;blog.devraza.duckdns.org&#x2F;projects&quot;&gt;as I&#x27;ve also done&lt;&#x2F;a&gt;)&lt;&#x2F;li&gt;
 &lt;li&gt;Hosting documentation (check out &lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;www.getzola.org&#x2F;themes&#x2F;adidoks&#x2F;&quot;&gt;this Zola theme&lt;&#x2F;a&gt;, for example)&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;blockquote class=&quot;callout question&quot;&gt;
