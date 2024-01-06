@@ -7,16 +7,16 @@
         <loc>https://devraza.duckdns.org/blog/</loc>
     </url>
     <url>
+        <loc>https://devraza.duckdns.org/blog/hoaxes-overview/</loc>
+        <lastmod>2024-01-04</lastmod>
+    </url>
+    <url>
         <loc>https://devraza.duckdns.org/blog/selfhost-search-engine/</loc>
         <lastmod>2023-12-31</lastmod>
     </url>
     <url>
         <loc>https://devraza.duckdns.org/blog/setting-up-zola-nixos/</loc>
         <lastmod>2023-12-29</lastmod>
-    </url>
-    <url>
-        <loc>https://devraza.duckdns.org/blog/the-effect-of-hoaxes/</loc>
-        <lastmod>2024-01-04</lastmod>
     </url>
     <url>
         <loc>https://devraza.duckdns.org/categories/</loc>
