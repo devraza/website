@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+	<title>Blog Posts</title>
+	<subtitle>All of the posts for my blog</subtitle>
+	<link href="https://devraza.duckdns.org/blog/feed.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://devraza.duckdns.org/blog/"/>
+	<updated>2024-01-19T00:00:00+00:00</updated>
+	<id>https://devraza.duckdns.org/blog/feed.xml</id>
+	<entry xml:lang="en">
+		<title>Misconceptions about NFC</title>
+		<published>2024-01-19T00:00:00+00:00</published>
+		<updated>2024-01-19T00:00:00+00:00</updated>
+		<link href="https://devraza.duckdns.org/blog/nfc-misconceptions/" type="text/html"/>
+		<id>https://devraza.duckdns.org/blog/nfc-misconceptions/</id>
+		<content type="html">&lt;blockquote class=&quot;callout alert&quot;&gt;
+    
+    &lt;div class=&quot;icon&quot;&gt;
+        &lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;20&quot; height=&quot;20&quot;&gt;&lt;path d=&quot;M4.00098 20V14C4.00098 9.58172 7.5827 6 12.001 6C16.4193 6 20.001 9.58172 20.001 14V20H21.001V22H3.00098V20H4.00098ZM6.00098 20H18.001V14C18.001 10.6863 15.3147 8 12.001 8C8.68727 8 6.00098 10.6863 6.00098 14V20ZM11.001 2H13.001V5H11.001V2ZM19.7792 4.80761L21.1934 6.22183L19.0721 8.34315L17.6578 6.92893L19.7792 4.80761ZM2.80859 6.22183L4.22281 4.80761L6.34413 6.92893L4.92991 8.34315L2.80859 6.22183ZM7.00098 14C7.00098 11.2386 9.23956 9 12.001 9V11C10.3441 11 9.00098 12.3431 9.00098 14H7.00098Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+    &lt;&#x2F;div&gt;
+    &lt;div class=&quot;content&quot;&gt;
+        
+        &lt;p&gt;&lt;strong&gt;Alert&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+        
+        &lt;p&gt;I made a mistake while writing this blog post - somehow forgetting that security isn&#x27;t unambiguous. You can actually skim NFC chips from a certain distance
+(having a limited distance is still an important factor though!), and though I think some of what I said below still applies you&#x27;re better off ignoring it all.&lt;&#x2F;p&gt;
+&lt;p&gt;There are, of course, a whole range of problems with skimming NFC chips from a distance so my point - don&#x27;t be so worried - would still stand.&lt;&#x2F;p&gt;
+&lt;p&gt;Either way, I recommend you take this with a grain of salt.&lt;&#x2F;p&gt;
+
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;blockquote&gt;&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;a class=&quot;zola-anchor&quot; href=&quot;#introduction&quot; aria-label=&quot;Anchor link for: introduction&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+&lt;p&gt;NFC (short for Near-Field Communication) is the set of communication protocols which allow for &lt;em&gt;near-field communication&lt;&#x2F;em&gt; between two electronic devices.
+One of the most prominent uses of this technology are contactless transactions - this includes services like Google and Apple Pay as well as all of your contactless-enabled cards.&lt;&#x2F;p&gt;
+&lt;p&gt;It&#x27;s been a while since my last blog past, but this one will be brief too - I&#x27;m writing here for the sake of clearing up some misconceptions people have about NFC.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;the-misconceptions&quot;&gt;The Misconceptions&lt;a class=&quot;zola-anchor&quot; href=&quot;#the-misconceptions&quot; aria-label=&quot;Anchor link for: the-misconceptions&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+&lt;h2 id=&quot;inspiration&quot;&gt;Inspiration&lt;a class=&quot;zola-anchor&quot; href=&quot;#inspiration&quot; aria-label=&quot;Anchor link for: inspiration&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;While talking with a friend on a WhatsApp group chat a few days ago about a program I found on my jailbroken iOS device - &lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;Aemulo&quot;&gt;Aemulo&lt;&#x2F;a&gt; - I was
+informed of &#x27;subway skimmers&#x27;; devices that could &lt;em&gt;supposedly&lt;&#x2F;em&gt; read data from contactless-enabled devices (via NFC) and would be able to emulate them.&lt;&#x2F;p&gt;
+&lt;p&gt;The idea behind the above example was that someone with malicious intent could place such a device in a public location and take their contactless devices for their malicious purposes.
+When I heard of this, my first thought was: &lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;devraza.duckdns.org&#x2F;blog&#x2F;hoaxes-overview&#x2F;&quot;&gt;hoax&lt;&#x2F;a&gt;, and I think that it was rightfully so.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-exactly-is-wrong-with-this&quot;&gt;What exactly is wrong with this?&lt;a class=&quot;zola-anchor&quot; href=&quot;#what-exactly-is-wrong-with-this&quot; aria-label=&quot;Anchor link for: what-exactly-is-wrong-with-this&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Several things. I&#x27;m no expert in cybersecurity - everyone&#x27;s a student in some way, but I was sure that NFC was, as it&#x27;s name implies, for &lt;strong&gt;near-field communication&lt;&#x2F;strong&gt;.
+I&#x27;m repeating myself here, but that&#x27;s kind of the point. Various reliable resources, including Wikipedia, show that NFC has a maximum range of only a few centimetres - which makes sense, no?&lt;&#x2F;p&gt;
+&lt;p&gt;And yet, whatever source my friend had for &#x27;subway skimmers&#x27; gave the impression, or otherwise stated, that it would work within a radius of a few feet, which is just impossible.
+Upon voicing my doubts, I was then told that &#x27;with a powerful enough antenna, it&#x27;s possible&#x27;. Hoaxes sure are convincing, aren&#x27;t they? Unfortunately, I am not able to find the source of my friend&#x27;s misinformation.&lt;&#x2F;p&gt;
+&lt;p&gt;See, NFC only works within a few centimetres anyways. Even if it could &lt;em&gt;magically&lt;&#x2F;em&gt; work within a radius of a few feet, you&#x27;ve got to take in the electromagnetic interference
+that the clothes and wallets people have would bring to any malicious device. The point of electromagnetic interference is especially true over a &lt;em&gt;huge&lt;&#x2F;em&gt; area of a few feet (relatively), where you&#x27;ve got several NFC-enabled devices.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;where-it-s-actually-an-issue&quot;&gt;Where it&#x27;s actually an issue&lt;a class=&quot;zola-anchor&quot; href=&quot;#where-it-s-actually-an-issue&quot; aria-label=&quot;Anchor link for: where-it-s-actually-an-issue&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Of course, that isn&#x27;t to say there aren&#x27;t any issues with NFC and malicious readers - I&#x27;m just saying that the word getting around is horribly unrealistic.
+For example, a &lt;em&gt;realistic&lt;&#x2F;em&gt; example of a malicious NFC reader would be one placed on the card slots in cash machines - you get:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot; checked=&quot;&quot;&#x2F;&gt;
+The short range (&amp;lt; ~20 cm)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot; checked=&quot;&quot;&#x2F;&gt;
+Only one device&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot; checked=&quot;&quot;&#x2F;&gt;
+Lots of devices to read!&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;And so, you&#x27;ve got someone so much more realistic that poses an actual threat!&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;a class=&quot;zola-anchor&quot; href=&quot;#conclusion&quot; aria-label=&quot;Anchor link for: conclusion&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+&lt;p&gt;The information above, which I deem accurate, is there. What I suggest be taken away from this is pretty much the same as what is was for &lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;devraza.duckdns.org&#x2F;blog&#x2F;hoaxes-overview&#x2F;&quot;&gt;my blog post on hoaxes&lt;&#x2F;a&gt; - &lt;strong&gt;do some fact-checking!&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>Take control of tailscale with headscale</title>
+		<published>2024-01-10T00:00:00+00:00</published>
+		<updated>2024-01-10T00:00:00+00:00</updated>
+		<link href="https://devraza.duckdns.org/blog/selfhost-tailscale/" type="text/html"/>
+		<id>https://devraza.duckdns.org/blog/selfhost-tailscale/</id>
+		<content type="html">&lt;h1 id=&quot;tailscale&quot;&gt;Tailscale&lt;a class=&quot;zola-anchor&quot; href=&quot;#tailscale&quot; aria-label=&quot;Anchor link for: tailscale&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+&lt;p&gt;&lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;tailscale.com&#x2F;&quot;&gt;Tailscale&lt;&#x2F;a&gt; is a modern tunnel VPN service based on &lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;www.wireguard.com&#x2F;&quot;&gt;WireGuard®&lt;&#x2F;a&gt; which provides a &#x27;free&#x27; and secure means of communication between 
+devices within a &lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;tailscale.com&#x2F;kb&#x2F;1136&#x2F;tailnet&quot;&gt;tailnet&lt;&#x2F;a&gt; - a private network which Tailscale provides its users.&lt;&#x2F;p&gt;
+&lt;p&gt;Essentially, it provides a private and secure way of accessing any of your devices, no matter where you are in the world - a personal WAN encompassing the entire world.&lt;&#x2F;p&gt;
+&lt;p&gt;And on top of this, Tailscale is completely free and open-source! At least, on the surface...&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;not-foss-what-do-you-mean&quot;&gt;Not FOSS? What do you mean?&lt;a class=&quot;zola-anchor&quot; href=&quot;#not-foss-what-do-you-mean&quot; aria-label=&quot;Anchor link for: not-foss-what-do-you-mean&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;There&#x27;s a quite popular saying within the free and open-source software community, which goes along the lines of:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If you aren&#x27;t paying for the product, then you are the product.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Which makes perfect sense. It&#x27;s the &lt;em&gt;modern&lt;&#x2F;em&gt; era so anything significant is powered by some form of &lt;em&gt;modern&lt;&#x2F;em&gt; technology, data is the new oil, and so on.
+In exchange for offering you &#x27;free&#x27; services, companies collect and use your data;
+while there supposedly are laws in place preventing the inconcensual collection of data in most countries around the world, &lt;em&gt;your&lt;&#x2F;em&gt; personal data may &lt;em&gt;still&lt;&#x2F;em&gt; be traded unethically and inconsensually.&lt;&#x2F;p&gt;
+&lt;p&gt;I personally am of the opinion that these laws are worth absolutely nothing if people aren&#x27;t educated in how their data is being used, and what specifically is being collected.
+But I digress, and that&#x27;s a blog post for another time.&lt;&#x2F;p&gt;
+&lt;p&gt;I also think it&#x27;s quite unfortunate that users of paid services &lt;em&gt;still&lt;&#x2F;em&gt; have their personal data collected in the unethical manner outlined above, despite the fact that they are &lt;em&gt;paying&lt;&#x2F;em&gt; for the service...&lt;&#x2F;p&gt;
+&lt;p&gt;In the context of Tailscale: while their clients are all open-source, their control server - the thing that&#x27;s managing and rerouting &lt;em&gt;everything&lt;&#x2F;em&gt; going through what they advertise as &lt;em&gt;your&lt;&#x2F;em&gt; &#x27;secure&#x27; VPN, isn&#x27;t.
+You&#x27;ve got no idea what this thing is doing with the traffic it recieves.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;headscale&quot;&gt;Headscale&lt;a class=&quot;zola-anchor&quot; href=&quot;#headscale&quot; aria-label=&quot;Anchor link for: headscale&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+&lt;p&gt;For every problem, there&#x27;s probably a solution somewhere. And luckily for this one (which may or may not actually be a problem for you), we&#x27;ve got &lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;headscale.net&#x2F;&quot;&gt;Headscale&lt;&#x2F;a&gt; as our solution.
+Headscale&#x27;s a self-hostable, open-source alternative to the Tailscale control server, and aims to &#x27;provide self-hosters and hobbyists with an open-source server they can use for their projects and labs&#x27;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;installing-on-nixos&quot;&gt;Installing on NixOS&lt;a class=&quot;zola-anchor&quot; href=&quot;#installing-on-nixos&quot; aria-label=&quot;Anchor link for: installing-on-nixos&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Moving on to installing and setting up Headscale on NixOS.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;nix&quot; style=&quot;background-color:#151515;color:#e8e8d3;&quot; class=&quot;language-nix &quot;&gt;&lt;code class=&quot;language-nix&quot; data-lang=&quot;nix&quot;&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# ...
+&lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# ...
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;services&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;headscale &lt;&#x2F;span&gt;&lt;span&gt;= {
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;enable &lt;&#x2F;span&gt;&lt;span&gt;= true;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;address &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;&amp;quot;0.0.0.0&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;port &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cf6a4c;&quot;&gt;7070&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;settings &lt;&#x2F;span&gt;&lt;span&gt;= {
+&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;logtail&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;enabled &lt;&#x2F;span&gt;&lt;span&gt;= false;
+&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;server_url &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;&amp;quot;https:&#x2F;&#x2F;headscale.devraza.duckdns.org&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;dns_config&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;base_domain &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;&amp;quot;devraza.duckdns.org&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;; 
+&lt;&#x2F;span&gt;&lt;span&gt;    };
+&lt;&#x2F;span&gt;&lt;span&gt;  };
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# ...
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This starts up the &lt;code&gt;headscale&lt;&#x2F;code&gt; systemd service on our host machine at port &lt;code&gt;7070&lt;&#x2F;code&gt;. After that, we make Headscale available over the clearnet with an NGINX reverse proxy, per the usual:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;nix&quot; style=&quot;background-color:#151515;color:#e8e8d3;&quot; class=&quot;language-nix &quot;&gt;&lt;code class=&quot;language-nix&quot; data-lang=&quot;nix&quot;&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;services&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;nginx &lt;&#x2F;span&gt;&lt;span&gt;= {
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;enable &lt;&#x2F;span&gt;&lt;span&gt;= true;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;virtualHosts &lt;&#x2F;span&gt;&lt;span&gt;= {
+&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;&amp;quot;headscale&amp;quot; &lt;&#x2F;span&gt;&lt;span&gt;= {
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;addSSL &lt;&#x2F;span&gt;&lt;span&gt;= true;
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;serverName &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;&amp;quot;headscale.devraza.duckdns.org&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;sslCertificate &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;.&#x2F;services&#x2F;nginx&#x2F;certs&#x2F;subdomains&#x2F;fullchain.pem&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;sslCertificateKey &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;.&#x2F;services&#x2F;nginx&#x2F;certs&#x2F;subdomains&#x2F;privkey.pem&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# Headscale proxy
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;locations&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;&amp;quot;&#x2F;&amp;quot; &lt;&#x2F;span&gt;&lt;span&gt;= {
+&lt;&#x2F;span&gt;&lt;span&gt;          &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;proxyPass &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;&amp;quot;http:&#x2F;&#x2F;127.0.0.1:${toString &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;config&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;services&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;headscale&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;port&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;}&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;          &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;proxyWebsockets &lt;&#x2F;span&gt;&lt;span&gt;= true;
+&lt;&#x2F;span&gt;&lt;span&gt;        };
+&lt;&#x2F;span&gt;&lt;span&gt;      };
+&lt;&#x2F;span&gt;&lt;span&gt;    };
+&lt;&#x2F;span&gt;&lt;span&gt;  };
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;And that&#x27;s it. A self-hosted, &lt;em&gt;truly&lt;&#x2F;em&gt; open-source Wireguard®-based VPN is now at your fingertips. Enjoy! Oh, but please read the conclusion before doing that:&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;a class=&quot;zola-anchor&quot; href=&quot;#conclusion&quot; aria-label=&quot;Anchor link for: conclusion&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+&lt;p&gt;For those of you who wish to have access to something like Tailscale but value your privacy above all, you would genuinely be greatful for Headscale. 
+However, I&#x27;ve found that some are fine with what Tailscale &lt;em&gt;does&lt;&#x2F;em&gt; provide in regards to FOSS, and are satisfied by the raw convenience and simplicity of a non-selfhosted Tailscale control server - exactly what it hopes to provide, as shown by their self-description on their website: &#x27;a zero-config, no-fuss VPN [provider]&#x27;.&lt;&#x2F;p&gt;
+&lt;p&gt;Or you could just settle with bare Wireguard®.&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>An overview on hoaxes</title>
+		<published>2024-01-04T00:00:00+00:00</published>
+		<updated>2024-01-04T00:00:00+00:00</updated>
+		<link href="https://devraza.duckdns.org/blog/hoaxes-overview/" type="text/html"/>
+		<id>https://devraza.duckdns.org/blog/hoaxes-overview/</id>
+		<content type="html">&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;a class=&quot;zola-anchor&quot; href=&quot;#introduction&quot; aria-label=&quot;Anchor link for: introduction&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+&lt;p&gt;In recent times, hoaxes have become increasingly prevalent as the internet continues to expand and as more people use social media.
+Misinformation is on a rise - though this is information which isn&#x27;t really new, the current state of things is horrible, and things really shouldn&#x27;t be the way they are.&lt;&#x2F;p&gt;
+&lt;p&gt;I aim for this to be a brief blog post detailing the effect of hoaxes on society, focusing on why they&#x27;re so harmful.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;what-exactly-is-a-hoax&quot;&gt;What exactly is a hoax?&lt;a class=&quot;zola-anchor&quot; href=&quot;#what-exactly-is-a-hoax&quot; aria-label=&quot;Anchor link for: what-exactly-is-a-hoax&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+&lt;p&gt;Put simply, a hoax is made-up information, be it a story or something else. Hoaxes are created with the intent of spreading false information - for a immense variety of reasons, from jokes and causing embarrassment to provoking politic or social change&lt;sup&gt;&lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Hoax&quot;&gt;1&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;. I won&#x27;t discuss the causes of hoaxes further in this blog post.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;the-effect-of-hoaxes&quot;&gt;The effect of hoaxes&lt;a class=&quot;zola-anchor&quot; href=&quot;#the-effect-of-hoaxes&quot; aria-label=&quot;Anchor link for: the-effect-of-hoaxes&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+&lt;p&gt;Hoaxes can cause significant damage to their targets if formulated cleverly. For example:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The stock price of Apple Inc. fell significantly in October 2008 after a hoax story was submitted to CNN&#x27;s user-generated news site iReport.com claiming that company CEO Steve Jobs had suffered a major heart attack. The source of the story was traced back to 4chan.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Excerpt from &lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;4chan&quot;&gt;the Wikipedia 4chan page&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;With the incredible presence of social media in our lives, spreading harmful misinformation like that above can be as simple as making a few posts - they don&#x27;t even need to be very convincing!
+What makes matters worse is how gullible the general population is, even those educated in this sort of thing - this shows &lt;em&gt;just&lt;&#x2F;em&gt; how much influence the internet and it&#x27;s contents have on us.&lt;&#x2F;p&gt;
+&lt;p&gt;I would like to clarify that I&#x27;m not suggesting that people should avoid using the internet to gather information - while its reliability is incredibly questionable, the accessibility and openness it provides far beats traditional methods of gathering information (books and such). My suggestion is that people should be much more careful with how they interpret information on the internet,
+and perform their due diligence in their research into whatever they&#x27;re aiming to learn; &lt;strong&gt;people should make sure that what they&#x27;re reading is accurate before absorbing any information&lt;&#x2F;strong&gt; (here&#x27;s your tl;dr).&lt;&#x2F;p&gt;
+&lt;p&gt;That&#x27;s about it for this blog post, as it was meant to be a brief way of expressing my thoughts on the matter. Thanks for reading!&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>Host your own private search engine with SearXNG</title>
+		<published>2023-12-31T00:00:00+00:00</published>
+		<updated>2023-12-31T00:00:00+00:00</updated>
+		<link href="https://devraza.duckdns.org/blog/selfhost-search-engine/" type="text/html"/>
+		<id>https://devraza.duckdns.org/blog/selfhost-search-engine/</id>
+		<content type="html">&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;a class=&quot;zola-anchor&quot; href=&quot;#introduction&quot; aria-label=&quot;Anchor link for: introduction&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+&lt;p&gt;&lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;docs.searxng.org&#x2F;&quot;&gt;SearXNG&lt;&#x2F;a&gt;, put in its own words, is a &#x27;free internet metasearch engine&#x27;.
+Note that it describes itself as a &lt;em&gt;metasearch&lt;&#x2F;em&gt; engine specifically - unlike your traditional search engine like Google or Bing, SearXNG does things a little bit differently:
+It aggregrates the results produced by search services like those aforementioned, and feeds them back to you.&lt;&#x2F;p&gt;
+&lt;p&gt;Because of this key detail and a great deal of effort by those who&#x27;ve helped shape it, SearXNG protects your privacy, and does so very well:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Private data from requests going to the search services it aggregrates results from is removed&lt;&#x2F;li&gt;
+&lt;li&gt;It does &lt;strong&gt;not&lt;&#x2F;strong&gt; forward &lt;em&gt;anything&lt;&#x2F;em&gt; to any third parties through search services&lt;&#x2F;li&gt;
+&lt;li&gt;Private data is &lt;em&gt;also&lt;&#x2F;em&gt; removed from requests going to the results pages&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Furthermore, SearXNG can be configured to use &lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;torproject.org&quot;&gt;Tor&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;However, the aspect of privacy isn&#x27;t the only great selling feature of the engine; from my use of the engine so far, it&#x27;s also great at...searching (is that a surprise?). The fact that it&#x27;s a metasearch engine plays a key role in this,
+as it provides SearXNG the ability to pull content more efficiently and gives &lt;em&gt;you&lt;&#x2F;em&gt; the ability to further tailor your experience.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;setting-up-searxng&quot;&gt;Setting up SearXNG&lt;a class=&quot;zola-anchor&quot; href=&quot;#setting-up-searxng&quot; aria-label=&quot;Anchor link for: setting-up-searxng&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+&lt;h2 id=&quot;installing-the-service&quot;&gt;Installing the service&lt;a class=&quot;zola-anchor&quot; href=&quot;#installing-the-service&quot; aria-label=&quot;Anchor link for: installing-the-service&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;As you may have expected if you&#x27;ve used NixOS for a while, searxng is packaged &lt;em&gt;and&lt;&#x2F;em&gt; has a service on NixOS. This makes setting it up just that much easier.&lt;&#x2F;p&gt;
+&lt;p&gt;To get started, place somewhere in your &lt;em&gt;system&lt;&#x2F;em&gt; config the following:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;nix&quot; style=&quot;background-color:#151515;color:#e8e8d3;&quot; class=&quot;language-nix &quot;&gt;&lt;code class=&quot;language-nix&quot; data-lang=&quot;nix&quot;&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# ...
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;services&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;searx &lt;&#x2F;span&gt;&lt;span&gt;= {
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;enable &lt;&#x2F;span&gt;&lt;span&gt;= true;
+&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;settings &lt;&#x2F;span&gt;&lt;span&gt;= {
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;server &lt;&#x2F;span&gt;&lt;span&gt;= {
+&lt;&#x2F;span&gt;&lt;span&gt;          &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;port &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cf6a4c;&quot;&gt;8888&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;          &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;bind_address &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;&amp;quot;127.0.0.1&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;          &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;secret_key &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;&amp;quot;@SEARX_SECRET_KEY@&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;          &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;base_url &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;&amp;quot;https:&#x2F;&#x2F;search.devraza.duckdns.org&#x2F;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# replace with wherever you want to host yours
+&lt;&#x2F;span&gt;&lt;span&gt;        };
+&lt;&#x2F;span&gt;&lt;span&gt;      };
+&lt;&#x2F;span&gt;&lt;span&gt;    };
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# ...
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The snippet above starts the &lt;code&gt;searx&lt;&#x2F;code&gt; systemd service for listening on port &lt;code&gt;8888&lt;&#x2F;code&gt;, and assumes a &lt;code&gt;base_url&lt;&#x2F;code&gt; of &lt;code&gt;https:&#x2F;&#x2F;search.devraza.duckdns.org&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Now that we&#x27;ve got the actual &lt;code&gt;searx&lt;&#x2F;code&gt; instance running, we can now set up a reverse proxy allowing the service to be accessed remotely (whether this is within your local network or across the internet is up to you).&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;setting-up-a-reverse-proxy&quot;&gt;Setting up a reverse proxy&lt;a class=&quot;zola-anchor&quot; href=&quot;#setting-up-a-reverse-proxy&quot; aria-label=&quot;Anchor link for: setting-up-a-reverse-proxy&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;what-is-a-reverse-proxy&quot;&gt;What is a reverse proxy?&lt;a class=&quot;zola-anchor&quot; href=&quot;#what-is-a-reverse-proxy&quot; aria-label=&quot;Anchor link for: what-is-a-reverse-proxy&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;Before I get started with the technical details of setting this up, I&#x27;d like to briefly clarify what a reverse proxy exactly is (to my understanding).&lt;&#x2F;p&gt;
+&lt;p&gt;Let&#x27;s get the wikipedia definition of reverse proxy out of the way first:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[...] a reverse proxy is an application that sits in front of back-end applications and forwards client requests to those applications. [...]&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;However, you might be confused as to what this actually means; I&#x27;ll give an example of the usage of reverse proxies to better explain this:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Suppose you&#x27;ve got a few services running on a server (for demonstration purposes, let&#x27;s name these &lt;code&gt;x&lt;&#x2F;code&gt;, &lt;code&gt;y&lt;&#x2F;code&gt; and &lt;code&gt;z&lt;&#x2F;code&gt;), each running on their own unique port.&lt;&#x2F;li&gt;
+&lt;li&gt;Assuming you had a domain, and wanted to access all of these services from their own unique sub-domains (e.g. &lt;code&gt;x.yourdomain.com&lt;&#x2F;code&gt;, &lt;code&gt;y.yourdomain.com&lt;&#x2F;code&gt; and &lt;code&gt;z.yourdomain.com&lt;&#x2F;code&gt;), you would have to use a reverse proxy.&lt;&#x2F;li&gt;
+&lt;li&gt;This reverse proxy would take in requests from clients going to sub-domains, and forward these requests to the appropriate port on your machine for the service being requested.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;The concept should be clear now, if it wasn&#x27;t already.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;using-nginx-to-set-up-the-reverse-proxy&quot;&gt;Using NGINX to set up the reverse proxy&lt;a class=&quot;zola-anchor&quot; href=&quot;#using-nginx-to-set-up-the-reverse-proxy&quot; aria-label=&quot;Anchor link for: using-nginx-to-set-up-the-reverse-proxy&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;NGINX is a popular web server that supports the creation of virtual hosts and the usage of reverse proxies. To accomodate our &lt;code&gt;searx&lt;&#x2F;code&gt; instance, we append the following to our NixOS server configuration:&lt;&#x2F;p&gt;
+&lt;pre data-linenos data-lang=&quot;nix&quot; style=&quot;background-color:#151515;color:#e8e8d3;&quot; class=&quot;language-nix &quot;&gt;&lt;code class=&quot;language-nix&quot; data-lang=&quot;nix&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;1&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;2&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# ...
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;3&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;services&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;nginx &lt;&#x2F;span&gt;&lt;span&gt;= {
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;4&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;enable &lt;&#x2F;span&gt;&lt;span&gt;= true;
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;5&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# any extra configuration here
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;6&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;virtualHosts &lt;&#x2F;span&gt;&lt;span&gt;= {
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;7&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;&amp;quot;search&amp;quot; &lt;&#x2F;span&gt;&lt;span&gt;= { &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# this can be anything, being an arbitrary identifier
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;8&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;forceSSL &lt;&#x2F;span&gt;&lt;span&gt;= true;
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;9&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;serverName &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;&amp;quot;search.yourdomain.com&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# replace this with whatever you&amp;#39;re serving from
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;10&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# SearX proxy
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;11&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;locations&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;&amp;quot;&#x2F;&amp;quot; &lt;&#x2F;span&gt;&lt;span&gt;= {
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;&lt;mark style=&quot;background-color:#010101;&quot;&gt;12&lt;&#x2F;mark&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;mark style=&quot;background-color:#010101;&quot;&gt;&lt;span&gt;          &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;proxyPass &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;&amp;quot;http:&#x2F;&#x2F;${toString &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;config&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;services&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;searx&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;settings&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;server&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;bind_address&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;}:${toString &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;config&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;services&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;searx&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;settings&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;server&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;port&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;}&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;&#x2F;mark&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;13&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;          &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;proxyWebsockets &lt;&#x2F;span&gt;&lt;span&gt;= true;
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;14&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;          &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;recommendedProxySettings &lt;&#x2F;span&gt;&lt;span&gt;= true;
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;15&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;        };
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;16&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;      };
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;17&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;    };
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;18&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;  };
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;19&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# ...
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;20&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;blockquote class=&quot;callout note&quot;&gt;
+    
+    &lt;div class=&quot;icon&quot;&gt;
+        &lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;20&quot; height=&quot;20&quot;&gt;&lt;path d=&quot;M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM11 7H13V9H11V7ZM11 11H13V17H11V11Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+    &lt;&#x2F;div&gt;
+    &lt;div class=&quot;content&quot;&gt;
+        
+        &lt;p&gt;&lt;strong&gt;Note&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+        
+        &lt;p&gt;The expression highlighted above is used to dynamically adjust the location NGINX will forward requests to, depending on your &lt;code&gt;searx&lt;&#x2F;code&gt; config&lt;&#x2F;p&gt;
+
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;After saving your changes and rebuilding your server&#x27;s system configuration (as usual), you should have a working &lt;em&gt;private&lt;&#x2F;em&gt; instance of SearXNG that you can access using the &lt;code&gt;serverName&lt;&#x2F;code&gt; you&#x27;ve given it.&lt;&#x2F;p&gt;
+&lt;p&gt;Set your browser to use this as your search engine using the relevant documentation (with Firefox this is as easy as right-clicking on the URL after opening up the page and clicking a button). Enjoy!&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>Setting up Zola on NixOS</title>
+		<published>2023-12-29T00:00:00+00:00</published>
+		<updated>2023-12-29T00:00:00+00:00</updated>
+		<link href="https://devraza.duckdns.org/blog/setting-up-zola-nixos/" type="text/html"/>
+		<id>https://devraza.duckdns.org/blog/setting-up-zola-nixos/</id>
+		<content type="html">&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;a class=&quot;zola-anchor&quot; href=&quot;#introduction&quot; aria-label=&quot;Anchor link for: introduction&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+&lt;p&gt;&lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;getzola.org&quot;&gt;Zola&lt;&#x2F;a&gt; is a static site generator (similarly to the infamous &lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;gohugo.io&quot;&gt;Hugo&lt;&#x2F;a&gt;, which you may have already heard of) and is written in Rust.
+It also happens to be the framework that this site is built on!&lt;&#x2F;p&gt;
+&lt;p&gt;This blog post is a guide on setting up the site engine on NixOS specifically.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;installation&quot;&gt;Installation&lt;a class=&quot;zola-anchor&quot; href=&quot;#installation&quot; aria-label=&quot;Anchor link for: installation&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+&lt;h2 id=&quot;installing-the-package&quot;&gt;Installing the package&lt;a class=&quot;zola-anchor&quot; href=&quot;#installing-the-package&quot; aria-label=&quot;Anchor link for: installing-the-package&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;code&gt;zola&lt;&#x2F;code&gt; is packaged in the nix package repository, so you just declaratively add the package to your configuration as usual:
+For the purposes of this guide, zola can be installed either as a system or user package.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;As a system package:&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;pre data-lang=&quot;nix&quot; style=&quot;background-color:#151515;color:#e8e8d3;&quot; class=&quot;language-nix &quot;&gt;&lt;code class=&quot;language-nix&quot; data-lang=&quot;nix&quot;&gt;&lt;span&gt;{ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;pkgs&lt;&#x2F;span&gt;&lt;span&gt;, ... }: {
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# ...
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;environment&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;systemPackages &lt;&#x2F;span&gt;&lt;span&gt;= with &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;pkgs&lt;&#x2F;span&gt;&lt;span&gt;; [
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;zola &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# Append the package name to the list
+&lt;&#x2F;span&gt;&lt;span&gt;    ];
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# ...
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ul&gt;
+&lt;li&gt;As a user package (with home-manager):&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;pre data-lang=&quot;nix&quot; style=&quot;background-color:#151515;color:#e8e8d3;&quot; class=&quot;language-nix &quot;&gt;&lt;code class=&quot;language-nix&quot; data-lang=&quot;nix&quot;&gt;&lt;span&gt;{ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;pkgs&lt;&#x2F;span&gt;&lt;span&gt;, ... }: {
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# ...
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;home&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;packages &lt;&#x2F;span&gt;&lt;span&gt;= with &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;pkgs&lt;&#x2F;span&gt;&lt;span&gt;; [
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;zola &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# Append the package name to the list
+&lt;&#x2F;span&gt;&lt;span&gt;    ];
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# ...
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Now that &lt;code&gt;zola&lt;&#x2F;code&gt; itself is installed, we can move on setting up the pages it serves - continue reading...&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;setting-up-a-theme&quot;&gt;Setting up a theme&lt;a class=&quot;zola-anchor&quot; href=&quot;#setting-up-a-theme&quot; aria-label=&quot;Anchor link for: setting-up-a-theme&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Zola actually has a section of its website showcasing several community-made themes which you can choose from to be the theme for your static site &lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;getzola.org&#x2F;themes&#x2F;&quot;&gt;here&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Simply choose a theme that you like (demos are usually available for each theme listed) and follow its appropriate documentation to set it up - this site uses a version of the &lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;www.getzola.org&#x2F;themes&#x2F;serene&#x2F;&quot;&gt;serene theme&lt;&#x2F;a&gt; with my custom colours.&lt;&#x2F;p&gt;
+&lt;blockquote class=&quot;callout note&quot;&gt;
+    
+    &lt;div class=&quot;icon&quot;&gt;
+        &lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;20&quot; height=&quot;20&quot;&gt;&lt;path d=&quot;M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM11 7H13V9H11V7ZM11 11H13V17H11V11Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+    &lt;&#x2F;div&gt;
+    &lt;div class=&quot;content&quot;&gt;
+        
+        &lt;p&gt;&lt;strong&gt;Custom themes&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+        
+        &lt;p&gt;You can also make your own theme if that better suits you (I recommend giving the &lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;getzola.org&#x2F;documentation&quot;&gt;documentation&lt;&#x2F;a&gt; a read if so).&lt;&#x2F;p&gt;
+
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;blockquote&gt;&lt;h2 id=&quot;setting-up-nginx&quot;&gt;Setting up NGINX&lt;a class=&quot;zola-anchor&quot; href=&quot;#setting-up-nginx&quot; aria-label=&quot;Anchor link for: setting-up-nginx&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;After selecting a theme (or making your own) you should now have a directory somewhere on your server containing your static site.
+For the following snippet, we&#x27;ll assume this is at &lt;code&gt;&#x2F;var&#x2F;lib&#x2F;blog&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;nginx.com&quot;&gt;NGINX&lt;&#x2F;a&gt; is a popular webserver which we&#x27;re going to use for the purposes of hosting and serving our site. To do so, append the following somewhere in your configuration:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;nix&quot; style=&quot;background-color:#151515;color:#e8e8d3;&quot; class=&quot;language-nix &quot;&gt;&lt;code class=&quot;language-nix&quot; data-lang=&quot;nix&quot;&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# ...
+&lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# ...
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;services&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;nginx &lt;&#x2F;span&gt;&lt;span&gt;= {
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;enable &lt;&#x2F;span&gt;&lt;span&gt;= true;
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;virtualHosts &lt;&#x2F;span&gt;&lt;span&gt;= {
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;&amp;quot;blog&amp;quot; &lt;&#x2F;span&gt;&lt;span&gt;= {
+&lt;&#x2F;span&gt;&lt;span&gt;                &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;forceSSL &lt;&#x2F;span&gt;&lt;span&gt;= true;
+&lt;&#x2F;span&gt;&lt;span&gt;                &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;serverName &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;&amp;quot;blog.devraza.duckdns.org&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# replace this with wherever your site will be
+&lt;&#x2F;span&gt;&lt;span&gt;                &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;root &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;&amp;quot;&#x2F;var&#x2F;lib&#x2F;blog&#x2F;public&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# the path to the `public` folder in our site directory
+&lt;&#x2F;span&gt;&lt;span&gt;            };
+&lt;&#x2F;span&gt;&lt;span&gt;        };
+&lt;&#x2F;span&gt;&lt;span&gt;    };
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# ...
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h1 id=&quot;finishing-up&quot;&gt;Finishing up&lt;a class=&quot;zola-anchor&quot; href=&quot;#finishing-up&quot; aria-label=&quot;Anchor link for: finishing-up&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+&lt;p&gt;You should now have your own static site built with Zola! You can use this for a bunch of things, like:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Your personal blog (as I&#x27;ve done)&lt;&#x2F;li&gt;
+&lt;li&gt;A way to showcase your projects (&lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;blog.devraza.duckdns.org&#x2F;projects&quot;&gt;as I&#x27;ve also done&lt;&#x2F;a&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;Hosting documentation (check out &lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;www.getzola.org&#x2F;themes&#x2F;adidoks&#x2F;&quot;&gt;this Zola theme&lt;&#x2F;a&gt;, for example)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;blockquote class=&quot;callout question&quot;&gt;
+    
+    &lt;div class=&quot;icon&quot;&gt;
+        &lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;20&quot; height=&quot;20&quot;&gt;&lt;path d=&quot;M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM11 15H13V17H11V15ZM13 13.3551V14H11V12.5C11 11.9477 11.4477 11.5 12 11.5C12.8284 11.5 13.5 10.8284 13.5 10C13.5 9.17157 12.8284 8.5 12 8.5C11.2723 8.5 10.6656 9.01823 10.5288 9.70577L8.56731 9.31346C8.88637 7.70919 10.302 6.5 12 6.5C13.933 6.5 15.5 8.067 15.5 10C15.5 11.5855 14.4457 12.9248 13 13.3551Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+    &lt;&#x2F;div&gt;
+    &lt;div class=&quot;content&quot;&gt;
+        
+        &lt;p&gt;&lt;strong&gt;Help, my changes aren&amp;#x27;t sticking!&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+        
+        &lt;p&gt;When you make new markdown files (or any other changes to the structure of your site), remember to run &lt;code&gt;zola build&lt;&#x2F;code&gt; in your site directory (&lt;code&gt;&#x2F;var&#x2F;lib&#x2F;blog&lt;&#x2F;code&gt;) for the changes to &lt;em&gt;build&lt;&#x2F;em&gt; into the actual site.&lt;&#x2F;p&gt;
+
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;blockquote&gt;</content>
+	</entry>
+</feed>
