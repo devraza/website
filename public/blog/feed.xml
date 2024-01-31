@@ -4,8 +4,45 @@
 	<subtitle>All of the posts for my blog</subtitle>
 	<link href="https://devraza.duckdns.org/blog/feed.xml" rel="self" type="application/atom+xml"/>
     <link href="https://devraza.duckdns.org/blog/"/>
-	<updated>2024-01-19T00:00:00+00:00</updated>
+	<updated>2024-01-31T00:00:00+00:00</updated>
 	<id>https://devraza.duckdns.org/blog/feed.xml</id>
+	<entry xml:lang="en">
+		<title>Selecting hardware for a server</title>
+		<published>2024-01-31T00:00:00+00:00</published>
+		<updated>2024-01-31T00:00:00+00:00</updated>
+		<link href="https://devraza.duckdns.org/blog/server-hardware-selection/" type="text/html"/>
+		<id>https://devraza.duckdns.org/blog/server-hardware-selection/</id>
+		<content type="html">&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Introduction
+I see a lot of people worryingly mistaken about what a server needs (specifically, a home server). Some think that a bland and incredibly ignorant &#x27;20% budget for CPU, 30% for GPU, and the rest for the rest&#x27; plan for selecting hardware is good enough (at least, before choosing specific items) - you can&#x27;t exactly be &lt;em&gt;wrong&lt;&#x2F;em&gt; when choosing
+hardware, but this is very, &lt;em&gt;very&lt;&#x2F;em&gt; far from right.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Requirements
+Server hardware needs to be low-power and resource-efficient - so as not to waste any money unnessarily, obviously. Your budget will strongly impact the specifications you can get your hands on, but I would think that even $200 is enough for a decent home server - depending on what you want to do with it, obviously.
+Keep in mind that you could always repurpose an old laptop or desktop lying around; it&#x27;s cheap, and you get what may be a surprisingly decent machine.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;** Power consumption
+The difference between low &#x2F;peak&#x2F; and low &#x2F;idle&#x2F; power should be noted - this is important for the purposes of my server as it&#x27;ll be used to stream games in place of my workstation; meaning that low &lt;em&gt;idle&lt;&#x2F;em&gt; power is what is desired here.&lt;&#x2F;p&gt;
+&lt;p&gt;** Usage of the server
+Naturally, how a server will be used will affect pretty much everything about the hardware chosen for it. For example, if you&#x27;re looking to stream games remotely, you&#x27;d go for a (perhaps powerful) dedicated GPU and would likely invest in some high-speed internet solution.
+As indicated by the above example of the GPU, you need to be &lt;em&gt;very&lt;&#x2F;em&gt; specific with what you choose - do you &#x2F;need&#x2F; a powerful GPU or do you not? After all, one of the last things you would want, ever, is money going to waste on something you don&#x27;t need, or failing to buy something that meets your expectations.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Conclusion
+I only gave two point of interest when selecting a server - looking at the numbers alone, this might seem like hardly anything to consider at all. My reasons for this are:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Power comumption is one factor that people often forego thinking about, and an extremely important one at that.&lt;&#x2F;li&gt;
+&lt;li&gt;Building on top of the previous point, you (probably) aren&#x27;t stupid. Knowing (albeit at a very basic level) what to look out for should be enough.&lt;&#x2F;li&gt;
+&lt;li&gt;It would be extremely difficult for me, or anyone else for that matter, to provide a &lt;em&gt;truly&lt;&#x2F;em&gt; complete solution to everyone&#x27;s needs for a home server.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Well, that&#x27;s it. I wish you luck in selecting your hardware.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Misconceptions about NFC</title>
 		<published>2024-01-19T00:00:00+00:00</published>
@@ -157,43 +194,6 @@ What makes matters worse is how gullible the general population is, even those e
 &lt;p&gt;I would like to clarify that I&#x27;m not suggesting that people should avoid using the internet to gather information - while its reliability is incredibly questionable, the accessibility and openness it provides far beats traditional methods of gathering information (books and such). My suggestion is that people should be much more careful with how they interpret information on the internet,
 and perform their due diligence in their research into whatever they&#x27;re aiming to learn; &lt;strong&gt;people should make sure that what they&#x27;re reading is accurate before absorbing any information&lt;&#x2F;strong&gt; (here&#x27;s your tl;dr).&lt;&#x2F;p&gt;
 &lt;p&gt;That&#x27;s about it for this blog post, as it was meant to be a brief way of expressing my thoughts on the matter. Thanks for reading!&lt;&#x2F;p&gt;
-</content>
-	</entry>
-	<entry xml:lang="en">
-		<title>Selecting hardware for a server</title>
-		<published>2024-01-04T00:00:00+00:00</published>
-		<updated>2024-01-04T00:00:00+00:00</updated>
-		<link href="https://devraza.duckdns.org/blog/server-hardware-selection/" type="text/html"/>
-		<id>https://devraza.duckdns.org/blog/server-hardware-selection/</id>
-		<content type="html">&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Introduction
-I see a lot of people worryingly mistaken about what a server needs (specifically, a home server). Some think that a bland and incredibly ignorant &#x27;20% budget for CPU, 30% for GPU, and the rest for the rest&#x27; plan for selecting hardware is good enough (at least, before choosing specific items) - you can&#x27;t exactly be &lt;em&gt;wrong&lt;&#x2F;em&gt; when choosing
-hardware, but this is very, &lt;em&gt;very&lt;&#x2F;em&gt; far from right.&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;Requirements
-Server hardware needs to be low-power and resource-efficient - so as not to waste any money unnessarily, obviously. Your budget will strongly impact the specifications you can get your hands on, but I would think that even $200 is enough for a decent home server - depending on what you want to do with it, obviously.
-Keep in mind that you could always repurpose an old laptop or desktop lying around; it&#x27;s cheap, and you get what may be a surprisingly decent machine.&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;p&gt;** Power consumption
-The difference between low &#x2F;peak&#x2F; and low &#x2F;idle&#x2F; power should be noted - this is important for the purposes of my server as it&#x27;ll be used to stream games in place of my workstation; meaning that low &lt;em&gt;idle&lt;&#x2F;em&gt; power is what is desired here.&lt;&#x2F;p&gt;
-&lt;p&gt;** Usage of the server
-Naturally, how a server will be used will affect pretty much everything about the hardware chosen for it. For example, if you&#x27;re looking to stream games remotely, you&#x27;d go for a (perhaps powerful) dedicated GPU and would likely invest in some high-speed internet solution.
-As indicated by the above example of the GPU, you need to be &lt;em&gt;very&lt;&#x2F;em&gt; specific with what you choose - do you &#x2F;need&#x2F; a powerful GPU or do you not? After all, one of the last things you would want, ever, is money going to waste on something you don&#x27;t need, or failing to buy something that meets your expectations.&lt;&#x2F;p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Conclusion
-I only gave two point of interest when selecting a server - looking at the numbers alone, this might seem like hardly anything to consider at all. My reasons for this are:&lt;&#x2F;p&gt;
-&lt;ul&gt;
-&lt;li&gt;Power comumption is one factor that people often forego thinking about, and an extremely important one at that.&lt;&#x2F;li&gt;
-&lt;li&gt;Building on top of the previous point, you (probably) aren&#x27;t stupid. Knowing (albeit at a very basic level) what to look out for should be enough.&lt;&#x2F;li&gt;
-&lt;li&gt;It would be extremely difficult for me, or anyone else for that matter, to provide a &lt;em&gt;truly&lt;&#x2F;em&gt; complete solution to everyone&#x27;s needs for a home server.&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;p&gt;Well, that&#x27;s it. I wish you luck in selecting your hardware.&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
 </content>
 	</entry>
 	<entry xml:lang="en">
