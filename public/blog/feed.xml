@@ -12,35 +12,25 @@
 		<updated>2024-01-31T00:00:00+00:00</updated>
 		<link href="https://devraza.duckdns.org/blog/server-hardware-selection/" type="text/html"/>
 		<id>https://devraza.duckdns.org/blog/server-hardware-selection/</id>
-		<content type="html">&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Introduction
-I see a lot of people worryingly mistaken about what a server needs (specifically, a home server). Some think that a bland and incredibly ignorant &#x27;20% budget for CPU, 30% for GPU, and the rest for the rest&#x27; plan for selecting hardware is good enough (at least, before choosing specific items) - you can&#x27;t exactly be &lt;em&gt;wrong&lt;&#x2F;em&gt; when choosing
+		<content type="html">&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;a class=&quot;zola-anchor&quot; href=&quot;#introduction&quot; aria-label=&quot;Anchor link for: introduction&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+&lt;p&gt;I see a lot of people worryingly mistaken about what a server needs (specifically, a home server). Some think that a bland and incredibly ignorant &#x27;20% budget for CPU, 30% for GPU, and the rest for the rest&#x27; plan for selecting hardware is good enough (at least, before choosing specific items) - you can&#x27;t exactly be &lt;em&gt;wrong&lt;&#x2F;em&gt; when choosing
 hardware, but this is very, &lt;em&gt;very&lt;&#x2F;em&gt; far from right.&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;Requirements
-Server hardware needs to be low-power and resource-efficient - so as not to waste any money unnessarily, obviously. Your budget will strongly impact the specifications you can get your hands on, but I would think that even $200 is enough for a decent home server - depending on what you want to do with it, obviously.
+&lt;h1 id=&quot;requirements&quot;&gt;Requirements&lt;a class=&quot;zola-anchor&quot; href=&quot;#requirements&quot; aria-label=&quot;Anchor link for: requirements&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+&lt;p&gt;Server hardware needs to be low-power and resource-efficient - so as not to waste any money unnessarily, obviously. Your budget will strongly impact the specifications you can get your hands on, but I would think that even $200 is enough for a decent home server - depending on what you want to do with it, obviously.
 Keep in mind that you could always repurpose an old laptop or desktop lying around; it&#x27;s cheap, and you get what may be a surprisingly decent machine.&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;p&gt;** Power consumption
-The difference between low &#x2F;peak&#x2F; and low &#x2F;idle&#x2F; power should be noted - this is important for the purposes of my server as it&#x27;ll be used to stream games in place of my workstation; meaning that low &lt;em&gt;idle&lt;&#x2F;em&gt; power is what is desired here.&lt;&#x2F;p&gt;
-&lt;p&gt;** Usage of the server
-Naturally, how a server will be used will affect pretty much everything about the hardware chosen for it. For example, if you&#x27;re looking to stream games remotely, you&#x27;d go for a (perhaps powerful) dedicated GPU and would likely invest in some high-speed internet solution.
-As indicated by the above example of the GPU, you need to be &lt;em&gt;very&lt;&#x2F;em&gt; specific with what you choose - do you &#x2F;need&#x2F; a powerful GPU or do you not? After all, one of the last things you would want, ever, is money going to waste on something you don&#x27;t need, or failing to buy something that meets your expectations.&lt;&#x2F;p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Conclusion
-I only gave two point of interest when selecting a server - looking at the numbers alone, this might seem like hardly anything to consider at all. My reasons for this are:&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;power-consumption&quot;&gt;Power consumption&lt;a class=&quot;zola-anchor&quot; href=&quot;#power-consumption&quot; aria-label=&quot;Anchor link for: power-consumption&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;The difference between low &lt;em&gt;peak&lt;&#x2F;em&gt; and low &lt;em&gt;idle&lt;&#x2F;em&gt; power should be noted in particular. Running costs can get very high if you don&#x27;t work to moderate power consumption, and probably wouldn&#x27;t be something you would ignore when it comes to home servers.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;usage-of-the-server&quot;&gt;Usage of the server&lt;a class=&quot;zola-anchor&quot; href=&quot;#usage-of-the-server&quot; aria-label=&quot;Anchor link for: usage-of-the-server&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Naturally, how a server will be used will affect pretty much everything about the hardware chosen for it. For example, if you&#x27;re looking to stream games remotely, you&#x27;d go for a (perhaps powerful) dedicated GPU and would likely invest in some high-speed internet solution.
+As indicated by the above example of the GPU, you need to be &lt;em&gt;very&lt;&#x2F;em&gt; specific with what you choose - do you &lt;em&gt;need&lt;&#x2F;em&gt; a powerful GPU or do you not? After all, one of the last things you would want, ever, is money going to waste on something you don&#x27;t need, or failing to buy something that meets your expectations.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;a class=&quot;zola-anchor&quot; href=&quot;#conclusion&quot; aria-label=&quot;Anchor link for: conclusion&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+&lt;p&gt;I only gave two point of interest when selecting a server - looking at the numbers alone, this might seem like hardly anything to consider at all. My reasons for this are:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;Power comumption is one factor that people often forego thinking about, and an extremely important one at that.&lt;&#x2F;li&gt;
 &lt;li&gt;Building on top of the previous point, you (probably) aren&#x27;t stupid. Knowing (albeit at a very basic level) what to look out for should be enough.&lt;&#x2F;li&gt;
-&lt;li&gt;It would be extremely difficult for me, or anyone else for that matter, to provide a &lt;em&gt;truly&lt;&#x2F;em&gt; complete solution to everyone&#x27;s needs for a home server.&lt;&#x2F;li&gt;
+&lt;li&gt;It would be extremely difficult for me, or anyone else for that matter, to provide a &lt;strong&gt;truly&lt;&#x2F;strong&gt; complete solution to everyone&#x27;s needs for a home server.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;Well, that&#x27;s it. I wish you luck in selecting your hardware.&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
 </content>
 	</entry>
 	<entry xml:lang="en">
