@@ -23,6 +23,10 @@
         <lastmod>2024-01-10</lastmod>
     </url>
     <url>
+        <loc>https://devraza.duckdns.org/blog/server-hardware-selection/</loc>
+        <lastmod>2024-01-04</lastmod>
+    </url>
+    <url>
         <loc>https://devraza.duckdns.org/blog/setting-up-zola-nixos/</loc>
         <lastmod>2023-12-29</lastmod>
     </url>
@@ -36,6 +40,9 @@
         <loc>https://devraza.duckdns.org/categories/guides/</loc>
     </url>
     <url>
+        <loc>https://devraza.duckdns.org/categories/self-hosting/</loc>
+    </url>
+    <url>
         <loc>https://devraza.duckdns.org/projects/</loc>
     </url>
     <url>
@@ -45,10 +52,16 @@
         <loc>https://devraza.duckdns.org/tags/hacking/</loc>
     </url>
     <url>
+        <loc>https://devraza.duckdns.org/tags/hardware/</loc>
+    </url>
+    <url>
         <loc>https://devraza.duckdns.org/tags/headscale/</loc>
     </url>
     <url>
         <loc>https://devraza.duckdns.org/tags/hoax/</loc>
+    </url>
+    <url>
+        <loc>https://devraza.duckdns.org/tags/home-lab/</loc>
     </url>
     <url>
         <loc>https://devraza.duckdns.org/tags/nfc/</loc>
@@ -67,6 +80,9 @@
     </url>
     <url>
         <loc>https://devraza.duckdns.org/tags/social-engineering/</loc>
+    </url>
+    <url>
+        <loc>https://devraza.duckdns.org/tags/sysadmin/</loc>
     </url>
     <url>
         <loc>https://devraza.duckdns.org/tags/tailscale/</loc>
