@@ -21,7 +21,7 @@ mermaid = false
   hardware, but this is very, *very* far from right.
 
 # Requirements
-  Server hardware needs to be low-power and resource-efficient - so as not to waste any money unnessarily, obviously. Your budget will strongly impact the specifications you can get your hands on, but I would think that even $200 is enough for a decent home server - depending on what you want to do with it, obviously.
+  Server hardware needs to be low-power and resource-efficient - so as not to waste any money unnessarily, obviously. Your budget will strongly impact the specifications you can get your hands on, but I would think that even $200 is enough for a decent home server - depending on what you want to do with it.
   Keep in mind that you could always repurpose an old laptop or desktop lying around; it's cheap, and you get what may be a surprisingly decent machine.
 
 ## Power consumption
