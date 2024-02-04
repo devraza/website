@@ -1,6 +1,22 @@
 [[project]]
+name = "radiant.nvim"
+desc = "A fast and minimal Neovim configuration framework."
+tags = ["neovim"]
+links = [
+  { name = "git", url = "https://git.devraza.duckdns.org/devraza/radiant.nvim" },
+]
+
+[[project]]
+name = "kagayaki.nvim"
+desc = "A gorgeously soft colorscheme for Neovim."
+tags = ["neovim", "colorscheme"]
+links = [
+  { name = "git", url = "https://git.devraza.duckdns.org/devraza/particle.nvim" },
+]
+
+[[project]]
 name = "DianciEmacs"
-desc = "A minimal and elegant Emacs configuration framework."
+desc = "A minimal and elegant Emacs configuration framework. `[Deprecated]`"
 tags = ["emacs", "config", "diancie"]
 links = [
   { name = "git", url = "https://git.devraza.duckdns.org/devraza/dianciemacs" },
@@ -20,20 +36,4 @@ desc = "A textual fast-paced 2D MMORPG written in Rust."
 tags = ["rust", "bevy", "mmorpg"]
 links = [
   { name = "git", url = "https://git.devraza.duckdns.org/devraza/ambition" },
-]
-
-[[project]]
-name = "quark.nvim"
-desc = "A fast and minimal Neovim configuration framework. `[Deprecated]`"
-tags = ["neovim"]
-links = [
-  { name = "git", url = "https://git.devraza.duckdns.org/devraza/quark.nvim" },
-]
-
-[[project]]
-name = "particle.nvim"
-desc = "A gorgeously soft colorscheme for Neovim. `[Deprecated]`"
-tags = ["neovim", "colorscheme"]
-links = [
-  { name = "git", url = "https://git.devraza.duckdns.org/devraza/particle.nvim" },
 ]
