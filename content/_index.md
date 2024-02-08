@@ -5,6 +5,10 @@ template = 'home.html'
 lang = 'en'
 +++
 
+<head>
+    <script async src="https://umami.devraza.duckdns.org/script.js" data-website-id="919546ff-37e2-4bac-9509-052b94d94111"></script>
+</head>
+
 I'm a moderately skilled programmer, beginner in the field of cybersecurity and aspiring graphic designer.
 [NixOS](https://nixos.org) is my operating system of choice, and [radiant.nvim](https://git.devraza.duckdns.org/devraza/radiant.nvim) (my bespoke distribution of [neovim](https://neovim.io)) is my text editor.
 
