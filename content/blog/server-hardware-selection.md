@@ -32,7 +32,7 @@ mermaid = false
    As indicated by the above example of the GPU, you need to be *very* specific with what you choose - do you *need* a powerful GPU or do you not? After all, one of the last things you would want, ever, is money going to waste on something you don't need, or failing to buy something that meets your expectations.
 
 # Conclusion
-  I only gave two point of interest when selecting a server - looking at the numbers alone, this might seem like hardly anything to consider at all. My reasons for this are:
+  I only gave two points of interest when selecting a server - looking at the numbers alone, this might seem like hardly anything to consider at all. My reasons for this are:
 
   - Power comumption is one factor that people often forego thinking about, and an extremely important one at that.
   - Building on top of the previous point, you (probably) aren't stupid. Knowing (albeit at a very basic level) what to look out for should be enough.
