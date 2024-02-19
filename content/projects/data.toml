@@ -24,7 +24,7 @@ links = [
 
 [[project]]
 name = "Kagayaki for Emacs"
-desc = "A gorgeously soft colorscheme for Emacs."
+desc = "A gorgeously soft colorscheme for Emacs. `[Deprecated]`"
 tags = ["emacs", "colorscheme", "theme", "dark"]
 links = [
   { name = "git", url = "https://git.devraza.duckdns.org/devraza/kagayaki-emacs" },
