@@ -47,7 +47,7 @@ bio = "Programming and cybersecurity"
 avatar = "img/avatar.webp"            # Your avatar
 links = [                             # Your links
     { name = "GitHub", icon = "github", url = "https://github.com/devraza" },
-    { name = "Email", icon = "email", url = "mailto:devraza@outlook.com" },
+    { name = "Email", icon = "email", url = "mailto:devraza@skiff.com" },
 ]
 
 homepage_layout = "about"             # "about" | "list"
