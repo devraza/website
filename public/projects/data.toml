@@ -1,4 +1,20 @@
 [[project]]
+name = "vaporise"
+desc = "A simple, featureful and blazingly fast memory-safe alternative to `rm` written in Rust."
+tags = ["rm", "rust", "alternative", "cli"]
+links = [
+  { name = "git", url = "https://git.devraza.duckdns.org/devraza/vaporise" },
+]
+
+[[project]]
+name = "Ambition"
+desc = "A textual fast-paced 2D MMORPG written in Rust."
+tags = ["rust", "bevy", "mmorpg"]
+links = [
+  { name = "git", url = "https://git.devraza.duckdns.org/devraza/ambition" },
+]
+
+[[project]]
 name = "radiant.nvim"
 desc = "A fast and minimal Neovim configuration framework."
 tags = ["neovim"]
@@ -28,12 +44,4 @@ desc = "A gorgeously soft colorscheme for Emacs. `[Deprecated]`"
 tags = ["emacs", "colorscheme", "theme", "dark"]
 links = [
   { name = "git", url = "https://git.devraza.duckdns.org/devraza/kagayaki-emacs" },
-]
-
-[[project]]
-name = "Ambition"
-desc = "A textual fast-paced 2D MMORPG written in Rust."
-tags = ["rust", "bevy", "mmorpg"]
-links = [
-  { name = "git", url = "https://git.devraza.duckdns.org/devraza/ambition" },
 ]
