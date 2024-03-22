@@ -15,8 +15,8 @@ I'm a moderately skilled programmer, beginner in the field of cybersecurity and 
 I also happen to be a devoted rustacean and a devout follower of the self-hosted way of life.
 
 My skills in programming and scripting languages I've used so far are as follows:
-- Advanced: `Python`
-- Intermediate: `Rust`, `Go`, `Nix`, `E-Lisp`,
+- Advanced: `Python`, `Nix` 
+- Intermediate: `Rust`, `Go`, `E-Lisp`
 - Beginner: `Julia`, `Lua`
 
 However, I consider myself able to work to a reasonable degree with any modern programming language.
