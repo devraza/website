@@ -16,8 +16,8 @@ I also happen to be a devoted rustacean and a devout follower of the self-hosted
 
 My skills in programming and scripting languages I've used so far are as follows:
 - Advanced: `Python`
-- Intermediate: `Go`, `Nix`, `E-Lisp`
-- Beginner: `Julia`, `Lua`, `Rust`
+- Intermediate: `Rust`, `Go`, `Nix`, `E-Lisp`,
+- Beginner: `Julia`, `Lua`
 
 However, I consider myself able to work to a reasonable degree with any modern programming language.
 
