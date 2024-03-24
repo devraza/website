@@ -1,4 +1,12 @@
 [[project]]
+name = "bunbun"
+desc = "A simple and adorable sysinfo utility written in Rust."
+tags = ["sysinfo", "neofetch", "rust", "cli"]
+links = [
+  { name = "git", url = "https://git.devraza.duckdns.org/devraza/bunbun" },
+]
+
+[[project]]
 name = "vaporise"
 desc = "A simple, featureful and blazingly fast memory-safe alternative to `rm` written in Rust."
 tags = ["rm", "rust", "alternative", "cli"]
