@@ -4,7 +4,6 @@ date = 2024-01-19
 draft = false
 
 [taxonomies]
-categories = ["Cybersecurity"]
 tags = ["nfc", "social engineering", "hacking"]
 
 [extra]

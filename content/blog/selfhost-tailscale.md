@@ -4,7 +4,6 @@ date = 2024-01-10
 draft = false
 
 [taxonomies]
-categories = ["Guides"]
 tags = ["tailscale", "headscale", "selfhosted", "privacy"]
 
 [extra]

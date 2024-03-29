@@ -4,7 +4,6 @@ date = 2023-12-29
 draft = false
 
 [taxonomies]
-categories = ["Guides"]
 tags = ["zola", "nixos"]
 
 [extra]

@@ -1,10 +1,9 @@
 +++
-title = "Selecting hardware for a server"
+title = "Selecting hardware for a (home) server"
 date = 2024-01-31
 draft = false
 
 [taxonomies]
-categories = ["Self-hosting"]
 tags = ["selfhosted", "home lab", "sysadmin", "hardware"]
 
 [extra]
