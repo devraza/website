@@ -187,6 +187,104 @@ and perform their due diligence in their research into whatever they&#x27;re aim
 </content>
 	</entry>
 	<entry xml:lang="en">
+		<title>Home server security</title>
+		<published>2024-01-04T00:00:00+00:00</published>
+		<updated>2024-01-04T00:00:00+00:00</updated>
+		<link href="https://devraza.duckdns.org/blog/home-server-security/" type="text/html"/>
+		<id>https://devraza.duckdns.org/blog/home-server-security/</id>
+		<content type="html">&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;a class=&quot;zola-anchor&quot; href=&quot;#introduction&quot; aria-label=&quot;Anchor link for: introduction&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+&lt;p&gt;Home server security is pretty often overlooked from what I can tell.
+Any device accessible from the internet has &lt;em&gt;some&lt;&#x2F;em&gt; degree of
+vulnerability in the current era of the internet. I aim for this
+document to detail methods to amend the contemporary cybersecurity
+challenges faced by most homelabbers.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;justification-in-depth&quot;&gt;Justification in Depth&lt;a class=&quot;zola-anchor&quot; href=&quot;#justification-in-depth&quot; aria-label=&quot;Anchor link for: justification-in-depth&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+&lt;p&gt;Of course, my statements about home servers needing some security
+measures put in place aren&#x27;t baseless. My own experience, as well as
+that of a sizable number of people on the wonderful
+&lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;join-lemmy.org&quot;&gt;lemmy&lt;&#x2F;a&gt; community at
+&lt;code&gt;selfhosted@lemmy.world&lt;&#x2F;code&gt; shows that home servers are endlessly &#x27;knocked&amp;quot;
+on, and that login attempts to services like SSH &lt;em&gt;are&lt;&#x2F;em&gt; made. Here&#x27;s a
+snippet from my &lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;fail2ban.org&quot;&gt;fail2ban&lt;&#x2F;a&gt; filter to
+verify this point:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#151515;color:#e8e8d3;&quot;&gt;&lt;code&gt;&lt;span&gt;Mar 29 14:38:13 icefall fail2ban.filter[1097]: INFO [...] Found 176.126.240.158 - 2024-03-29 14:38:13
+&lt;&#x2F;span&gt;&lt;span&gt;Mar 29 14:40:11 icefall fail2ban.filter[1097]: INFO [...] Found 176.126.240.158 - 2024-03-29 14:40:11
+&lt;&#x2F;span&gt;&lt;span&gt;Mar 29 14:40:29 icefall fail2ban.filter[1097]: INFO [...] Found 185.8.165.204 - 2024-03-29 14:40:29
+&lt;&#x2F;span&gt;&lt;span&gt;Mar 29 14:40:40 icefall fail2ban.filter[1097]: INFO [...] Found 162.212.154.58 - 2024-03-29 14:40:40
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Within the past &lt;em&gt;few minutes&lt;&#x2F;em&gt;, I&#x27;ve already got a few IP addresses from
+all over the world taking a peak at my services. If I had my SSH port
+set to the standard &lt;code&gt;22&lt;&#x2F;code&gt;, I could have expected a few rogue login
+attempts to have been made, too.&lt;&#x2F;p&gt;
+&lt;p&gt;And, speaking of not having my SSH port set to the standard &lt;code&gt;22&lt;&#x2F;code&gt;, I&#x27;ll
+now move on to what you should be done to secure a home server. One
+thing that I think should be noted, however, is that security doesn&#x27;t
+need to be very strong, and you generally don&#x27;t need to go too far out
+of your way with security measures (though this definitely depends on
+invdividual circumstance). Honestly speaking, you &lt;em&gt;probably&lt;&#x2F;em&gt; &lt;strong&gt;don&#x27;t&lt;&#x2F;strong&gt;
+have competent black hats looking to get in to your server - what you
+probably &lt;strong&gt;do&lt;&#x2F;strong&gt; have, however, are a bunch of script kiddies and
+perversive bots.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;the-list&quot;&gt;The list&lt;a class=&quot;zola-anchor&quot; href=&quot;#the-list&quot; aria-label=&quot;Anchor link for: the-list&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+&lt;p&gt;The fairly basic stuff you&#x27;d need to do in this case doesn&#x27;t make much
+room for detail. So, here it all is in the form of a simple list (I&#x27;ve
+included the relevant NixOS configuration where I think it&#x27;d be
+useful&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#1&quot;&gt;1&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;):&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Move your SSH daemon to a non-default port, like &lt;code&gt;3291&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;nix&quot; style=&quot;background-color:#151515;color:#e8e8d3;&quot; class=&quot;language-nix &quot;&gt;&lt;code class=&quot;language-nix&quot; data-lang=&quot;nix&quot;&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;services&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;openssh &lt;&#x2F;span&gt;&lt;span&gt;= {
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;ports &lt;&#x2F;span&gt;&lt;span&gt;= [ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cf6a4c;&quot;&gt;3291 &lt;&#x2F;span&gt;&lt;span&gt;]; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# whatever you like
+&lt;&#x2F;span&gt;&lt;span&gt;};
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Force public key authentication with SSH and disable root logins.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;nix&quot; style=&quot;background-color:#151515;color:#e8e8d3;&quot; class=&quot;language-nix &quot;&gt;&lt;code class=&quot;language-nix&quot; data-lang=&quot;nix&quot;&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;services&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;openssh&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;settings &lt;&#x2F;span&gt;&lt;span&gt;= {
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;PermitRootLogin &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;&amp;quot;no&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;PasswordAuthentication &lt;&#x2F;span&gt;&lt;span&gt;= false;
+&lt;&#x2F;span&gt;&lt;span&gt;};
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Set up a pretty basic firewall - something like &lt;code&gt;ufw&lt;&#x2F;code&gt; would do the trick.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;nix&quot; style=&quot;background-color:#151515;color:#e8e8d3;&quot; class=&quot;language-nix &quot;&gt;&lt;code class=&quot;language-nix&quot; data-lang=&quot;nix&quot;&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;networking &lt;&#x2F;span&gt;&lt;span&gt;= {
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;nftables&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;enable &lt;&#x2F;span&gt;&lt;span&gt;= true; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# use the newer nftables
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;firewall &lt;&#x2F;span&gt;&lt;span&gt;= {
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;enable &lt;&#x2F;span&gt;&lt;span&gt;= true;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;rejectPackets &lt;&#x2F;span&gt;&lt;span&gt;= true; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# explicit deny
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;interfaces&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;enp1s0 &lt;&#x2F;span&gt;&lt;span&gt;= { &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# obviously, replace `enp1s0` with your interface
+&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;allowedTCPPorts &lt;&#x2F;span&gt;&lt;span&gt;= [ ... ]; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# put in the ports you need here
+&lt;&#x2F;span&gt;&lt;span&gt;    };
+&lt;&#x2F;span&gt;&lt;span&gt;  };
+&lt;&#x2F;span&gt;&lt;span&gt;};
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;This probably doesn&#x27;t need to be said, but &lt;strong&gt;use strong passwords&lt;&#x2F;strong&gt;!&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Host a &lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;fail2ban.org&quot;&gt;fail2ban&lt;&#x2F;a&gt; instance to ban hosts making bruteforce attempts.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;I think that&#x27;s all there is for almost everyone, and is basically the
+minimal amount of effort a home server administrator should do.
+Personally, I would prefer to enforce a VPN connection in order to
+access my &lt;em&gt;personal&lt;&#x2F;em&gt; services for that extra layer of security (because
+why&#x27;d they need to be exposed to the internet?). This can be done faily
+easily with tailscale, and for the slightly more paranoid -
+&lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;headscale.net&#x2F;&quot;&gt;headscale&lt;&#x2F;a&gt; is a
+viable...alternative? Anyways, I&#x27;ve got a blog post that explores
+headscale in a little more detail, which might be worth checking out.&lt;&#x2F;p&gt;
+&lt;p&gt;Well, that&#x27;s all I wanted to say. It&#x27;s been a while since my last blog
+post, and the inspiration for this one came seemingly randomly - I hope
+someone finds this useful.&lt;&#x2F;p&gt;
+&lt;div class=&quot;footnote-definition&quot; id=&quot;1&quot;&gt;&lt;sup class=&quot;footnote-definition-label&quot;&gt;1&lt;&#x2F;sup&gt;
+&lt;p&gt;Naturally, you shouldn&#x27;t just copy and paste the snippets into&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
 		<title>Host your own private search engine with SearXNG</title>
 		<published>2023-12-31T00:00:00+00:00</published>
 		<updated>2023-12-31T00:00:00+00:00</updated>
