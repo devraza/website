@@ -4,6 +4,7 @@ date = 2024-01-04
 draft = false
 
 [taxonomies]
+categories = ["Cybersecurity & Privacy"]
 tags = ["hoax", "social engineering"]
 
 [extra]

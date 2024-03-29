@@ -4,6 +4,7 @@ date = 2024-01-31
 draft = false
 
 [taxonomies]
+categories = ["Cybersecurity & Privacy"]
 tags = ["selfhosted", "home lab", "sysadmin", "hardware"]
 
 [extra]

@@ -4,6 +4,7 @@ date = 2024-01-10
 draft = false
 
 [taxonomies]
+categories = ["Cybersecurity & Privacy"]
 tags = ["tailscale", "headscale", "selfhosted", "privacy"]
 
 [extra]
