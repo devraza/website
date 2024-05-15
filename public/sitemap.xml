@@ -1,100 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://devraza.duckdns.org/</loc>
+        <loc>https://devraza.giize.com/</loc>
     </url>
     <url>
-        <loc>https://devraza.duckdns.org/blog/</loc>
+        <loc>https://devraza.giize.com/blog/</loc>
     </url>
     <url>
-        <loc>https://devraza.duckdns.org/blog/hoaxes-overview/</loc>
+        <loc>https://devraza.giize.com/blog/hoaxes-overview/</loc>
         <lastmod>2024-01-04</lastmod>
     </url>
     <url>
-        <loc>https://devraza.duckdns.org/blog/home-server-security/</loc>
+        <loc>https://devraza.giize.com/blog/home-server-security/</loc>
         <lastmod>2024-03-28</lastmod>
     </url>
     <url>
-        <loc>https://devraza.duckdns.org/blog/nfc-misconceptions/</loc>
+        <loc>https://devraza.giize.com/blog/nfc-misconceptions/</loc>
         <lastmod>2024-01-19</lastmod>
     </url>
     <url>
-        <loc>https://devraza.duckdns.org/blog/selfhost-search-engine/</loc>
+        <loc>https://devraza.giize.com/blog/selfhost-search-engine/</loc>
         <lastmod>2023-12-31</lastmod>
     </url>
     <url>
-        <loc>https://devraza.duckdns.org/blog/selfhost-tailscale/</loc>
+        <loc>https://devraza.giize.com/blog/selfhost-tailscale/</loc>
         <lastmod>2024-01-10</lastmod>
     </url>
     <url>
-        <loc>https://devraza.duckdns.org/blog/server-hardware-selection/</loc>
+        <loc>https://devraza.giize.com/blog/server-hardware-selection/</loc>
         <lastmod>2024-01-31</lastmod>
     </url>
     <url>
-        <loc>https://devraza.duckdns.org/blog/setting-up-zola-nixos/</loc>
+        <loc>https://devraza.giize.com/blog/setting-up-zola-nixos/</loc>
         <lastmod>2023-12-29</lastmod>
     </url>
     <url>
-        <loc>https://devraza.duckdns.org/categories/</loc>
+        <loc>https://devraza.giize.com/categories/</loc>
     </url>
     <url>
-        <loc>https://devraza.duckdns.org/categories/cybersecurity-privacy/</loc>
+        <loc>https://devraza.giize.com/categories/cybersecurity-privacy/</loc>
     </url>
     <url>
-        <loc>https://devraza.duckdns.org/categories/misc/</loc>
+        <loc>https://devraza.giize.com/categories/misc/</loc>
     </url>
     <url>
-        <loc>https://devraza.duckdns.org/projects/</loc>
+        <loc>https://devraza.giize.com/projects/</loc>
     </url>
     <url>
-        <loc>https://devraza.duckdns.org/tags/</loc>
+        <loc>https://devraza.giize.com/tags/</loc>
     </url>
     <url>
-        <loc>https://devraza.duckdns.org/tags/hacking/</loc>
+        <loc>https://devraza.giize.com/tags/hacking/</loc>
     </url>
     <url>
-        <loc>https://devraza.duckdns.org/tags/hardening/</loc>
+        <loc>https://devraza.giize.com/tags/hardening/</loc>
     </url>
     <url>
-        <loc>https://devraza.duckdns.org/tags/hardware/</loc>
+        <loc>https://devraza.giize.com/tags/hardware/</loc>
     </url>
     <url>
-        <loc>https://devraza.duckdns.org/tags/headscale/</loc>
+        <loc>https://devraza.giize.com/tags/headscale/</loc>
     </url>
     <url>
-        <loc>https://devraza.duckdns.org/tags/hoax/</loc>
+        <loc>https://devraza.giize.com/tags/hoax/</loc>
     </url>
     <url>
-        <loc>https://devraza.duckdns.org/tags/home-lab/</loc>
+        <loc>https://devraza.giize.com/tags/home-lab/</loc>
     </url>
     <url>
-        <loc>https://devraza.duckdns.org/tags/homelab/</loc>
+        <loc>https://devraza.giize.com/tags/homelab/</loc>
     </url>
     <url>
-        <loc>https://devraza.duckdns.org/tags/nfc/</loc>
+        <loc>https://devraza.giize.com/tags/nfc/</loc>
     </url>
     <url>
-        <loc>https://devraza.duckdns.org/tags/nixos/</loc>
+        <loc>https://devraza.giize.com/tags/nixos/</loc>
     </url>
     <url>
-        <loc>https://devraza.duckdns.org/tags/privacy/</loc>
+        <loc>https://devraza.giize.com/tags/privacy/</loc>
     </url>
     <url>
-        <loc>https://devraza.duckdns.org/tags/searxng/</loc>
+        <loc>https://devraza.giize.com/tags/searxng/</loc>
     </url>
     <url>
-        <loc>https://devraza.duckdns.org/tags/selfhosted/</loc>
+        <loc>https://devraza.giize.com/tags/selfhosted/</loc>
     </url>
     <url>
-        <loc>https://devraza.duckdns.org/tags/social-engineering/</loc>
+        <loc>https://devraza.giize.com/tags/social-engineering/</loc>
     </url>
     <url>
-        <loc>https://devraza.duckdns.org/tags/sysadmin/</loc>
+        <loc>https://devraza.giize.com/tags/sysadmin/</loc>
     </url>
     <url>
-        <loc>https://devraza.duckdns.org/tags/tailscale/</loc>
+        <loc>https://devraza.giize.com/tags/tailscale/</loc>
     </url>
     <url>
-        <loc>https://devraza.duckdns.org/tags/zola/</loc>
+        <loc>https://devraza.giize.com/tags/zola/</loc>
     </url>
 </urlset>

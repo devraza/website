@@ -2,16 +2,16 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
 	<title>Blog Posts</title>
 	<subtitle>All of the posts for my blog</subtitle>
-	<link href="https://devraza.duckdns.org/blog/feed.xml" rel="self" type="application/atom+xml"/>
-    <link href="https://devraza.duckdns.org/blog/"/>
+	<link href="https://devraza.giize.com/blog/feed.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://devraza.giize.com/blog/"/>
 	<updated>2024-03-28T00:00:00+00:00</updated>
-	<id>https://devraza.duckdns.org/blog/feed.xml</id>
+	<id>https://devraza.giize.com/blog/feed.xml</id>
 	<entry xml:lang="en">
 		<title>Home server security</title>
 		<published>2024-03-28T00:00:00+00:00</published>
 		<updated>2024-03-28T00:00:00+00:00</updated>
-		<link href="https://devraza.duckdns.org/blog/home-server-security/" type="text/html"/>
-		<id>https://devraza.duckdns.org/blog/home-server-security/</id>
+		<link href="https://devraza.giize.com/blog/home-server-security/" type="text/html"/>
+		<id>https://devraza.giize.com/blog/home-server-security/</id>
 		<content type="html">&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;a class=&quot;zola-anchor&quot; href=&quot;#introduction&quot; aria-label=&quot;Anchor link for: introduction&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
 &lt;p&gt;Home server security is pretty often overlooked from what I can tell.
 Any device accessible from the internet has &lt;em&gt;some&lt;&#x2F;em&gt; degree of
@@ -108,8 +108,8 @@ someone finds this useful.&lt;&#x2F;p&gt;
 		<title>Selecting hardware for a (home) server</title>
 		<published>2024-01-31T00:00:00+00:00</published>
 		<updated>2024-01-31T00:00:00+00:00</updated>
-		<link href="https://devraza.duckdns.org/blog/server-hardware-selection/" type="text/html"/>
-		<id>https://devraza.duckdns.org/blog/server-hardware-selection/</id>
+		<link href="https://devraza.giize.com/blog/server-hardware-selection/" type="text/html"/>
+		<id>https://devraza.giize.com/blog/server-hardware-selection/</id>
 		<content type="html">&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;a class=&quot;zola-anchor&quot; href=&quot;#introduction&quot; aria-label=&quot;Anchor link for: introduction&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
 &lt;p&gt;I see a lot of people worryingly mistaken about what a server needs (specifically, a home server). Some think that a bland and incredibly ignorant &#x27;20% budget for CPU, 30% for GPU, and the rest for the rest&#x27; plan for selecting hardware is good enough (at least, before choosing specific items) - you can&#x27;t exactly be &lt;em&gt;wrong&lt;&#x2F;em&gt; when choosing
 hardware, but this is very, &lt;em&gt;very&lt;&#x2F;em&gt; far from right.&lt;&#x2F;p&gt;
@@ -135,8 +135,8 @@ As indicated by the above example of the GPU, you need to be &lt;em&gt;very&lt;&
 		<title>Misconceptions about NFC</title>
 		<published>2024-01-19T00:00:00+00:00</published>
 		<updated>2024-01-19T00:00:00+00:00</updated>
-		<link href="https://devraza.duckdns.org/blog/nfc-misconceptions/" type="text/html"/>
-		<id>https://devraza.duckdns.org/blog/nfc-misconceptions/</id>
+		<link href="https://devraza.giize.com/blog/nfc-misconceptions/" type="text/html"/>
+		<id>https://devraza.giize.com/blog/nfc-misconceptions/</id>
 		<content type="html">&lt;blockquote class=&quot;callout alert&quot;&gt;
     
     &lt;div class=&quot;icon&quot;&gt;
@@ -189,8 +189,8 @@ Lots of devices to read!&lt;&#x2F;li&gt;
 		<title>Take control of tailscale with headscale</title>
 		<published>2024-01-10T00:00:00+00:00</published>
 		<updated>2024-01-10T00:00:00+00:00</updated>
-		<link href="https://devraza.duckdns.org/blog/selfhost-tailscale/" type="text/html"/>
-		<id>https://devraza.duckdns.org/blog/selfhost-tailscale/</id>
+		<link href="https://devraza.giize.com/blog/selfhost-tailscale/" type="text/html"/>
+		<id>https://devraza.giize.com/blog/selfhost-tailscale/</id>
 		<content type="html">&lt;h1 id=&quot;tailscale&quot;&gt;Tailscale&lt;a class=&quot;zola-anchor&quot; href=&quot;#tailscale&quot; aria-label=&quot;Anchor link for: tailscale&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
 &lt;p&gt;&lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;tailscale.com&#x2F;&quot;&gt;Tailscale&lt;&#x2F;a&gt; is a modern tunnel VPN service based on &lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;www.wireguard.com&#x2F;&quot;&gt;WireGuard®&lt;&#x2F;a&gt; which provides a &#x27;free&#x27; and secure means of communication between 
 devices within a &lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;tailscale.com&#x2F;kb&#x2F;1136&#x2F;tailnet&quot;&gt;tailnet&lt;&#x2F;a&gt; - a private network which Tailscale provides its users.&lt;&#x2F;p&gt;
@@ -261,8 +261,8 @@ However, I&#x27;ve found that some are fine with what Tailscale &lt;em&gt;does&l
 		<title>An overview on hoaxes</title>
 		<published>2024-01-04T00:00:00+00:00</published>
 		<updated>2024-01-04T00:00:00+00:00</updated>
-		<link href="https://devraza.duckdns.org/blog/hoaxes-overview/" type="text/html"/>
-		<id>https://devraza.duckdns.org/blog/hoaxes-overview/</id>
+		<link href="https://devraza.giize.com/blog/hoaxes-overview/" type="text/html"/>
+		<id>https://devraza.giize.com/blog/hoaxes-overview/</id>
 		<content type="html">&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;a class=&quot;zola-anchor&quot; href=&quot;#introduction&quot; aria-label=&quot;Anchor link for: introduction&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
 &lt;p&gt;In recent times, hoaxes have become increasingly prevalent as the internet continues to expand and as more people use social media.
 Misinformation is on a rise - though this is information which isn&#x27;t really new, the current state of things is horrible, and things really shouldn&#x27;t be the way they are.&lt;&#x2F;p&gt;
@@ -288,8 +288,8 @@ and perform their due diligence in their research into whatever they&#x27;re aim
 		<title>Host your own private search engine with SearXNG</title>
 		<published>2023-12-31T00:00:00+00:00</published>
 		<updated>2023-12-31T00:00:00+00:00</updated>
-		<link href="https://devraza.duckdns.org/blog/selfhost-search-engine/" type="text/html"/>
-		<id>https://devraza.duckdns.org/blog/selfhost-search-engine/</id>
+		<link href="https://devraza.giize.com/blog/selfhost-search-engine/" type="text/html"/>
+		<id>https://devraza.giize.com/blog/selfhost-search-engine/</id>
 		<content type="html">&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;a class=&quot;zola-anchor&quot; href=&quot;#introduction&quot; aria-label=&quot;Anchor link for: introduction&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
 &lt;p&gt;&lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;docs.searxng.org&#x2F;&quot;&gt;SearXNG&lt;&#x2F;a&gt;, put in its own words, is a &#x27;free internet metasearch engine&#x27;.
 Note that it describes itself as a &lt;em&gt;metasearch&lt;&#x2F;em&gt; engine specifically - unlike your traditional search engine like Google or Bing, SearXNG does things a little bit differently:
@@ -383,8 +383,8 @@ as it provides SearXNG the ability to pull content more efficiently and gives &l
 		<title>Setting up Zola on NixOS</title>
 		<published>2023-12-29T00:00:00+00:00</published>
 		<updated>2023-12-29T00:00:00+00:00</updated>
-		<link href="https://devraza.duckdns.org/blog/setting-up-zola-nixos/" type="text/html"/>
-		<id>https://devraza.duckdns.org/blog/setting-up-zola-nixos/</id>
+		<link href="https://devraza.giize.com/blog/setting-up-zola-nixos/" type="text/html"/>
+		<id>https://devraza.giize.com/blog/setting-up-zola-nixos/</id>
 		<content type="html">&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;a class=&quot;zola-anchor&quot; href=&quot;#introduction&quot; aria-label=&quot;Anchor link for: introduction&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
 &lt;p&gt;&lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;getzola.org&quot;&gt;Zola&lt;&#x2F;a&gt; is a static site generator (similarly to the infamous &lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;gohugo.io&quot;&gt;Hugo&lt;&#x2F;a&gt;, which you may have already heard of) and is written in Rust.
 It also happens to be the framework that this site is built on!&lt;&#x2F;p&gt;

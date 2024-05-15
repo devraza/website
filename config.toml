@@ -5,7 +5,7 @@
 #
 #=========================================================================================
 
-base_url = "https://devraza.duckdns.org"      # Domain name of your website
+base_url = "https://devraza.giize.com" # Domain name of your website
 title = "Devraza"
 description = "Someone who does programming, cybersecurity and some other stuff"
 default_language = "en"
