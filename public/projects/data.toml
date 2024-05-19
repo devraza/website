@@ -31,6 +31,14 @@ links = [
 ]
 
 [[project]]
+name = "rustboyadvance-ng"
+desc = "A rusty Nintendo™ Game Boy Advance emulator and debugger. Fork of `michelhe/rustboyadvance-ng`."
+tags = ["rust", "gameboy", "emulator"]
+links = [
+  { name = "git", url = "https://git.devraza.duckdns.org/devraza/rustboyadvance-ng" },
+]
+
+[[project]]
 name = "radiant.nvim"
 desc = "A fast and minimal Neovim configuration framework."
 tags = ["neovim"]
