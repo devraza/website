@@ -1,4 +1,12 @@
 [[project]]
+name = "sage"
+desc = "A collection of utilities for home labs written in Rust."
+tags = ["rust", "homelab", "selfhosted", "utility", "cli"]
+links = [
+  { name = "git", url = "https://git.devraza.duckdns.org/devraza/sage" },
+]
+
+[[project]]
 name = "bunbun"
 desc = "A simple and adorable sysinfo utility written in Rust."
 tags = ["sysinfo", "neofetch", "rust", "cli"]
