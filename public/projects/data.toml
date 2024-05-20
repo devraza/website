@@ -32,10 +32,11 @@ links = [
 
 [[project]]
 name = "rustboyadvance-ng"
-desc = "A rusty Nintendo™ Game Boy Advance emulator and debugger. Fork of `michelhe/rustboyadvance-ng`."
+desc = "A rusty Nintendo™ Game Boy Advance emulator and debugger. `[Deprecated]`"
 tags = ["rust", "gameboy", "emulator"]
 links = [
   { name = "git", url = "https://git.devraza.duckdns.org/devraza/rustboyadvance-ng" },
+  { name = "parent", url = "https://github.com/michelhe/rustboyadvance-ng" },
 ]
 
 [[project]]
