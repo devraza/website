@@ -3,7 +3,7 @@ name = "sage"
 desc = "A collection of utilities for home labs written in Rust."
 tags = ["rust", "homelab", "selfhosted", "utility", "cli"]
 links = [
-  { name = "git", url = "https://git.devraza.duckdns.org/devraza/sage" },
+  { name = "git", url = "https://git.devraza.giize.com/devraza/sage" },
 ]
 
 [[project]]
@@ -11,7 +11,7 @@ name = "bunbun"
 desc = "A simple and adorable sysinfo utility written in Rust."
 tags = ["sysinfo", "neofetch", "rust", "cli"]
 links = [
-  { name = "git", url = "https://git.devraza.duckdns.org/devraza/bunbun" },
+  { name = "git", url = "https://git.devraza.giize.com/devraza/bunbun" },
 ]
 
 [[project]]
@@ -19,7 +19,7 @@ name = "vaporise"
 desc = "A simple, featureful and blazingly fast memory-safe alternative to `rm` written in Rust."
 tags = ["rm", "rust", "alternative", "cli"]
 links = [
-  { name = "git", url = "https://git.devraza.duckdns.org/devraza/vaporise" },
+  { name = "git", url = "https://git.devraza.giize.com/devraza/vaporise" },
 ]
 
 [[project]]
@@ -27,7 +27,7 @@ name = "Ambition"
 desc = "A textual fast-paced 2D MMORPG written in Rust."
 tags = ["rust", "bevy", "mmorpg"]
 links = [
-  { name = "git", url = "https://git.devraza.duckdns.org/devraza/ambition" },
+  { name = "git", url = "https://git.devraza.giize.com/devraza/ambition" },
 ]
 
 [[project]]
@@ -35,7 +35,7 @@ name = "rustboyadvance-ng"
 desc = "A rusty Nintendo™ Game Boy Advance emulator and debugger. `[Deprecated]`"
 tags = ["rust", "gameboy", "emulator"]
 links = [
-  { name = "git", url = "https://git.devraza.duckdns.org/devraza/rustboyadvance-ng" },
+  { name = "git", url = "https://git.devraza.giize.com/devraza/rustboyadvance-ng" },
   { name = "parent", url = "https://github.com/michelhe/rustboyadvance-ng" },
 ]
 
@@ -44,7 +44,7 @@ name = "radiant.nvim"
 desc = "A fast and minimal Neovim configuration framework."
 tags = ["neovim"]
 links = [
-  { name = "git", url = "https://git.devraza.duckdns.org/devraza/radiant.nvim" },
+  { name = "git", url = "https://git.devraza.giize.com/devraza/radiant.nvim" },
 ]
 
 [[project]]
@@ -52,7 +52,7 @@ name = "kagayaki.nvim"
 desc = "A gorgeously soft colorscheme for Neovim."
 tags = ["neovim", "colorscheme"]
 links = [
-  { name = "git", url = "https://git.devraza.duckdns.org/devraza/particle.nvim" },
+  { name = "git", url = "https://git.devraza.giize.com/devraza/particle.nvim" },
 ]
 
 [[project]]
@@ -60,7 +60,7 @@ name = "DianciEmacs"
 desc = "A minimal and elegant Emacs configuration framework. `[Deprecated]`"
 tags = ["emacs", "config", "diancie"]
 links = [
-  { name = "git", url = "https://git.devraza.duckdns.org/devraza/dianciemacs" },
+  { name = "git", url = "https://git.devraza.giize.com/devraza/dianciemacs" },
 ]
 
 [[project]]
@@ -68,5 +68,5 @@ name = "Kagayaki for Emacs"
 desc = "A gorgeously soft colorscheme for Emacs. `[Deprecated]`"
 tags = ["emacs", "colorscheme", "theme", "dark"]
 links = [
-  { name = "git", url = "https://git.devraza.duckdns.org/devraza/kagayaki-emacs" },
+  { name = "git", url = "https://git.devraza.giize.com/devraza/kagayaki-emacs" },
 ]

@@ -8,7 +8,7 @@ lang = 'en'
 <script defer src="https://analytics.eu.umami.is/script.js" data-website-id="422360e8-6821-4e32-82b2-05b380bc8cad"></script>
 
 I'm a moderately skilled programmer, beginner in the field of cybersecurity and aspiring graphic designer.
-[NixOS](https://nixos.org) is my operating system of choice, and [radiant.nvim](https://git.devraza.duckdns.org/devraza/radiant.nvim) (my bespoke distribution of [neovim](https://neovim.io)) is my text editor.
+[NixOS](https://nixos.org) is my operating system of choice, and [radiant.nvim](https://git.devraza.giize.com/devraza/radiant.nvim) (my bespoke distribution of [neovim](https://neovim.io)) is my text editor.
 
 I also happen to be a devoted rustacean and a devout follower of the self-hosted way of life.
 
