@@ -111,5 +111,5 @@ Well, that's all I wanted to say. It's been a while since my last blog
 post, and the inspiration for this one came seemingly randomly - I hope
 someone finds this useful.
 
-[^1]: Naturally, you shouldn't just copy and paste the snippets into
+[^1]: Naturally, you shouldn't just copy and paste the snippets into your own config. Do your research first!
  
