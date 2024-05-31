@@ -7,6 +7,10 @@
         <loc>https://devraza.giize.com/blog/</loc>
     </url>
     <url>
+        <loc>https://devraza.giize.com/blog/adblock-blocky/</loc>
+        <lastmod>2024-05-31</lastmod>
+    </url>
+    <url>
         <loc>https://devraza.giize.com/blog/hoaxes-overview/</loc>
         <lastmod>2024-01-04</lastmod>
     </url>
@@ -51,6 +55,12 @@
     </url>
     <url>
         <loc>https://devraza.giize.com/tags/</loc>
+    </url>
+    <url>
+        <loc>https://devraza.giize.com/tags/adblock/</loc>
+    </url>
+    <url>
+        <loc>https://devraza.giize.com/tags/blocky/</loc>
     </url>
     <url>
         <loc>https://devraza.giize.com/tags/hacking/</loc>

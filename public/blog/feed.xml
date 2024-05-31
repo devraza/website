@@ -4,8 +4,85 @@
 	<subtitle>All of the posts for my blog</subtitle>
 	<link href="https://devraza.giize.com/blog/feed.xml" rel="self" type="application/atom+xml"/>
     <link href="https://devraza.giize.com/blog/"/>
-	<updated>2024-03-28T00:00:00+00:00</updated>
+	<updated>2024-05-31T00:00:00+00:00</updated>
 	<id>https://devraza.giize.com/blog/feed.xml</id>
+	<entry xml:lang="en">
+		<title>DNS-level adblock on the go with blocky</title>
+		<published>2024-05-31T00:00:00+00:00</published>
+		<updated>2024-05-31T00:00:00+00:00</updated>
+		<link href="https://devraza.giize.com/blog/adblock-blocky/" type="text/html"/>
+		<id>https://devraza.giize.com/blog/adblock-blocky/</id>
+		<content type="html">&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;a class=&quot;zola-anchor&quot; href=&quot;#introduction&quot; aria-label=&quot;Anchor link for: introduction&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+&lt;p&gt;An adblocker is something you commonly find installed in browsers, usually through an extension. However, what if you wanted an adblocking system that was a bit deeper? Something that doesn&#x27;t require a browser extension, and gives you a consistent adblocking system? This is where DNS-level adblockers like &lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;adguard.com&#x2F;en&#x2F;adguard-home&#x2F;overview.html&quot;&gt;AdGuard Home&lt;&#x2F;a&gt; or &lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;pi-hole.net&quot;&gt;Pi-hole&lt;&#x2F;a&gt; come in.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;dns&quot;&gt;DNS?&lt;a class=&quot;zola-anchor&quot; href=&quot;#dns&quot; aria-label=&quot;Anchor link for: dns&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+&lt;p&gt;DNS stands for &lt;strong&gt;D&lt;&#x2F;strong&gt;omain &lt;strong&gt;N&lt;&#x2F;strong&gt;ame &lt;strong&gt;S&lt;&#x2F;strong&gt;ystem. It&#x27;s what points URLs like &lt;code&gt;https:&#x2F;&#x2F;duck.com&lt;&#x2F;code&gt; to an IP address (like &lt;code&gt;52.142.124.215&lt;&#x2F;code&gt;), making it much easier to find things on the internet.&lt;&#x2F;p&gt;
+&lt;p&gt;DNS-level adblockers work by filtering out queries for URLs pointing to IP addresses serving ads. In this blog post, I&#x27;ll use &lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;0xerr0r.github.io&#x2F;blocky&quot;&gt;blocky&lt;&#x2F;a&gt; as an example of one such adblocker for demonstration purposes.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;setting-up-blocky&quot;&gt;Setting up blocky&lt;a class=&quot;zola-anchor&quot; href=&quot;#setting-up-blocky&quot; aria-label=&quot;Anchor link for: setting-up-blocky&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+&lt;h2 id=&quot;nixos-configuration&quot;&gt;NixOS configuration&lt;a class=&quot;zola-anchor&quot; href=&quot;#nixos-configuration&quot; aria-label=&quot;Anchor link for: nixos-configuration&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;There&#x27;s a configuration option for &lt;code&gt;blocky&lt;&#x2F;code&gt; provided by NixOS, so you can enable and configure it in your NixOS config:&lt;&#x2F;p&gt;
+&lt;pre data-linenos data-lang=&quot;nix&quot; style=&quot;background-color:#151515;color:#e8e8d3;&quot; class=&quot;language-nix &quot;&gt;&lt;code class=&quot;language-nix&quot; data-lang=&quot;nix&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;1&lt;&#x2F;td&gt;&lt;td&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;services&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;blocky &lt;&#x2F;span&gt;&lt;span&gt;= {
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;2&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;enable &lt;&#x2F;span&gt;&lt;span&gt;= true;
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;3&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;settings &lt;&#x2F;span&gt;&lt;span&gt;= {
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;4&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;prometheus&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;enable &lt;&#x2F;span&gt;&lt;span&gt;= true;
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;5&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;blocking &lt;&#x2F;span&gt;&lt;span&gt;= {
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;6&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;blackLists&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;ads &lt;&#x2F;span&gt;&lt;span&gt;= [
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;7&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;&amp;quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;StevenBlack&#x2F;hosts&#x2F;master&#x2F;hosts&amp;quot;
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;8&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;&amp;quot;https:&#x2F;&#x2F;sysctl.org&#x2F;cameleon&#x2F;hosts&amp;quot;
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;9&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;&amp;quot;https:&#x2F;&#x2F;s3.amazonaws.com&#x2F;lists.disconnect.me&#x2F;simple_ad.txt&amp;quot;
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;10&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;&amp;quot;https:&#x2F;&#x2F;s3.amazonaws.com&#x2F;lists.disconnect.me&#x2F;simple_tracking.txt&amp;quot;
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;11&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;      ];
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;12&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;clientGroupsBlock &lt;&#x2F;span&gt;&lt;span&gt;= {
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;13&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;default &lt;&#x2F;span&gt;&lt;span&gt;= [ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;&amp;quot;ads&amp;quot; &lt;&#x2F;span&gt;&lt;span&gt;];
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;14&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;      };
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;15&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;    };
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;16&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;upstreams &lt;&#x2F;span&gt;&lt;span&gt;= {
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;17&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;groups&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;default &lt;&#x2F;span&gt;&lt;span&gt;= [
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;18&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;&amp;quot;9.9.9.9&amp;quot;
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;19&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;&amp;quot;1.1.1.1&amp;quot;
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;20&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;      ];
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;21&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;    };
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;22&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;ports &lt;&#x2F;span&gt;&lt;span&gt;= {
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;23&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;dns &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#99ad6a;&quot;&gt;&amp;quot;0.0.0.0:53&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;24&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;    };
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;25&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;  };
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;tr&gt;&lt;td&gt;26&lt;&#x2F;td&gt;&lt;td&gt;&lt;span&gt;};
+&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;blockquote class=&quot;callout alert&quot;&gt;
+    
+    &lt;div class=&quot;icon&quot;&gt;
+        &lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;20&quot; height=&quot;20&quot;&gt;&lt;path d=&quot;M4.00098 20V14C4.00098 9.58172 7.5827 6 12.001 6C16.4193 6 20.001 9.58172 20.001 14V20H21.001V22H3.00098V20H4.00098ZM6.00098 20H18.001V14C18.001 10.6863 15.3147 8 12.001 8C8.68727 8 6.00098 10.6863 6.00098 14V20ZM11.001 2H13.001V5H11.001V2ZM19.7792 4.80761L21.1934 6.22183L19.0721 8.34315L17.6578 6.92893L19.7792 4.80761ZM2.80859 6.22183L4.22281 4.80761L6.34413 6.92893L4.92991 8.34315L2.80859 6.22183ZM7.00098 14C7.00098 11.2386 9.23956 9 12.001 9V11C10.3441 11 9.00098 12.3431 9.00098 14H7.00098Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+    &lt;&#x2F;div&gt;
+    &lt;div class=&quot;content&quot;&gt;
+        
+        &lt;p&gt;&lt;strong&gt;Why isn&amp;#x27;t it running?&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+        
+        &lt;p&gt;You might need to reboot after running a &lt;code&gt;nixos-rebuild switch&lt;&#x2F;code&gt;, or move&#x2F;kill any process running on port &lt;code&gt;53&lt;&#x2F;code&gt; for this to work.&lt;&#x2F;p&gt;
+
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;blockquote&gt;&lt;blockquote class=&quot;callout note&quot;&gt;
+    
+    &lt;div class=&quot;icon&quot;&gt;
+        &lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;20&quot; height=&quot;20&quot;&gt;&lt;path d=&quot;M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM11 7H13V9H11V7ZM11 11H13V17H11V11Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+    &lt;&#x2F;div&gt;
+    &lt;div class=&quot;content&quot;&gt;
+        
+        &lt;p&gt;&lt;strong&gt;Custom DNS mapping&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+        
+        &lt;p&gt;You can use blocky to map a domain of your choice to an IP of your choice - refer to the &lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;0xerr0r.github.io&#x2F;blocky&#x2F;latest&#x2F;configuration&#x2F;&quot;&gt;documentation&lt;&#x2F;a&gt; for more information.&lt;&#x2F;p&gt;
+
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Here, I&#x27;ve used two upstream nameservers for blocky to forward valid DNS requests to (since blocky doesn&#x27;t do any DNS resolution itself - except for custom mapping, detailed later). One is &lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;one.one.one.one&quot;&gt;Cloudflare&#x27;s DNS&lt;&#x2F;a&gt; (&lt;code&gt;1.1.1.1&lt;&#x2F;code&gt;) and the other is &lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;quad9.net&quot;&gt;Quad9&lt;&#x2F;a&gt; (&lt;code&gt;9.9.9.9&lt;&#x2F;code&gt;).&lt;&#x2F;p&gt;
+&lt;p&gt;As indicated by lines 6 through 11, you need to add lists containing URLs you want to be filtered from your DNS requests.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;making-it-work-everywhere&quot;&gt;Making it work everywhere&lt;a class=&quot;zola-anchor&quot; href=&quot;#making-it-work-everywhere&quot; aria-label=&quot;Anchor link for: making-it-work-everywhere&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;The thing is, you&#x27;ll need to set the IP address of the machine running blocky as a nameserver for all of your workstations - it just won&#x27;t recieve any requests otherwise, so it won&#x27;t be &lt;em&gt;doing&lt;&#x2F;em&gt; any adblocking if you don&#x27;t do this.&lt;&#x2F;p&gt;
+&lt;p&gt;Of course, if you&#x27;ve got a router worth keeping around, you should be able to set a network-wide DNS resolver, and you can point this to your blocky-running machine in your router&#x27;s settings.&lt;&#x2F;p&gt;
+&lt;p&gt;However, what if you wanted to have this work everywhere you go, perhaps on a portable laptop? Well, if you&#x27;re using &lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;tailscale.com&quot;&gt;Tailscale&lt;&#x2F;a&gt; or &lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;headscale.net&quot;&gt;Headscale&lt;&#x2F;a&gt; you can just can edit the nameservers you use in your VPN&#x27;s settings and set it to the &lt;em&gt;IP address&lt;&#x2F;em&gt; of the device running blocky. This way, any device on your VPN can utilise blocky and have a functioning DNS-level adblocker no matter where you are.&lt;&#x2F;p&gt;
+&lt;p&gt;If you&#x27;re looking to setup headscale, I&#x27;ve made &lt;a href=&quot;..&#x2F;selfhost-tailscale&quot;&gt;a blog post about it&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;finishing-thoughts&quot;&gt;Finishing thoughts&lt;a class=&quot;zola-anchor&quot; href=&quot;#finishing-thoughts&quot; aria-label=&quot;Anchor link for: finishing-thoughts&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+&lt;p&gt;With the existence of browser extensions doing the same thing adblockers like blocky and Pi-hole can, not everyone is going to need something this sophisticated. I think something like this is better suited to those looking for better coverage in their adblocking, or something that gives more control over DNS requests - for example, to easily setup custom DNS mappings or to restrict access to certain websites.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Home server security</title>
 		<published>2024-03-28T00:00:00+00:00</published>
