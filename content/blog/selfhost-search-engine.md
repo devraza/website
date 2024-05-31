@@ -4,7 +4,7 @@ date = 2023-12-31
 draft = false
 
 [taxonomies]
-categories = ["Cybersecurity & Privacy"]
+categories = ["Self-hosting"]
 tags = ["searxng", "privacy", "selfhosted", "nixos"]
 
 [extra]

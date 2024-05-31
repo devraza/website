@@ -38,10 +38,13 @@
         <loc>https://devraza.giize.com/categories/</loc>
     </url>
     <url>
-        <loc>https://devraza.giize.com/categories/cybersecurity-privacy/</loc>
+        <loc>https://devraza.giize.com/categories/cybersecurity/</loc>
     </url>
     <url>
         <loc>https://devraza.giize.com/categories/misc/</loc>
+    </url>
+    <url>
+        <loc>https://devraza.giize.com/categories/self-hosting/</loc>
     </url>
     <url>
         <loc>https://devraza.giize.com/projects/</loc>
