@@ -24,7 +24,7 @@ links = [
 
 [[project]]
 name = "Ambition"
-desc = "A textual fast-paced 2D MMORPG."
+desc = "A fast-paced 2D MMORPG."
 tags = ["rust", "bevy", "mmorpg"]
 links = [
   { name = "git", url = "https://git.devraza.giize.com/devraza/ambition" },
@@ -77,4 +77,20 @@ desc = "A gorgeously soft colorscheme for Emacs. `[Deprecated]`"
 tags = ["emacs", "colorscheme", "theme", "dark"]
 links = [
   { name = "git", url = "https://git.devraza.giize.com/devraza/kagayaki-emacs" },
+]
+
+[[project]]
+name = "Ambition (legacy)"
+desc = "A fast-paced, text-based massively multiplayer role-playing game. `[Deprecated]`"
+tags = ["go", "ebiten", "game", "mmorpg"]
+links = [
+  { name = "git", url = "https://git.devraza.giize.com/ambition/legacy" },
+]
+
+[[project]]
+name = "Catchtwo"
+desc = "A second generation, free Pokétwo autocatcher, made to stop people from wasting their money on 'premium' alternatives. `[Deprecated]`"
+tags = ["pokétwo", "pokémon", "discord", "userbot"]
+links = [
+  { name = "git", url = "https://github.com/devraza/catchtwo" },
 ]
