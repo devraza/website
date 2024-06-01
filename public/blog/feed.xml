@@ -100,7 +100,7 @@ challenges faced by most homelabbers.&lt;&#x2F;p&gt;
 measures put in place aren&#x27;t baseless. My own experience, as well as
 that of a sizable number of people on the wonderful
 &lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;join-lemmy.org&quot;&gt;lemmy&lt;&#x2F;a&gt; community at
-&lt;code&gt;selfhosted@lemmy.world&lt;&#x2F;code&gt; shows that home servers are endlessly &#x27;knocked&amp;quot;
+&lt;code&gt;selfhosted@lemmy.world&lt;&#x2F;code&gt; shows that home servers are endlessly &#x27;knocked&#x27;
 on, and that login attempts to services like SSH &lt;em&gt;are&lt;&#x2F;em&gt; made. Here&#x27;s a
 snippet from my &lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;fail2ban.org&quot;&gt;fail2ban&lt;&#x2F;a&gt; filter to
 verify this point:&lt;&#x2F;p&gt;
