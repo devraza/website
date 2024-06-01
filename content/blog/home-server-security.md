@@ -30,7 +30,7 @@ Of course, my statements about home servers needing some security
 measures put in place aren't baseless. My own experience, as well as
 that of a sizable number of people on the wonderful
 [lemmy](https://join-lemmy.org) community at
-`selfhosted@lemmy.world` shows that home servers are endlessly 'knocked"
+`selfhosted@lemmy.world` shows that home servers are endlessly 'knocked'
 on, and that login attempts to services like SSH *are* made. Here's a
 snippet from my [fail2ban](https://fail2ban.org) filter to
 verify this point:
