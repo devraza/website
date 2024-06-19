@@ -1,12 +1,4 @@
 [[project]]
-name = "altoku"
-desc = "A TUI japanese media aggregate."
-tags = ["tui", "ratatui", "rust", "manga", "anime", "ani-cli"]
-links = [
-  { name = "git", url = "https://git.devraza.giize.com/devraza/altoku" },
-]
-
-[[project]]
 name = "bunbun"
 desc = "A simple and adorable sysinfo utility."
 tags = ["sysinfo", "neofetch", "rust", "cli"]
