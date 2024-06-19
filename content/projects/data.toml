@@ -1,4 +1,12 @@
 [[project]]
+name = "webchain"
+desc = "A fast and minimal bookmark manager."
+tags = ["rocket", "web", "rust", "bookmark", "links"]
+links = [
+  { name = "git", url = "https://git.devraza.giize.com/devraza/webchain" },
+]
+
+[[project]]
 name = "bunbun"
 desc = "A simple and adorable sysinfo utility."
 tags = ["sysinfo", "neofetch", "rust", "cli"]

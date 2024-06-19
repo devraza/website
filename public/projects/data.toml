@@ -1,9 +1,9 @@
 [[project]]
-name = "altoku"
-desc = "A TUI japanese media aggregate."
-tags = ["tui", "ratatui", "rust", "manga", "anime", "ani-cli"]
+name = "webchain"
+desc = "A fast and minimal bookmark manager."
+tags = ["rocket", "web", "rust", "bookmark", "links"]
 links = [
-  { name = "git", url = "https://git.devraza.giize.com/devraza/altoku" },
+  { name = "git", url = "https://git.devraza.giize.com/devraza/webchain" },
 ]
 
 [[project]]
