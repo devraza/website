@@ -4,8 +4,72 @@
 	<subtitle>All of the posts for my blog</subtitle>
 	<link href="https://devraza.giize.com/blog/feed.xml" rel="self" type="application/atom+xml"/>
     <link href="https://devraza.giize.com/blog/"/>
-	<updated>2024-05-31T00:00:00+00:00</updated>
+	<updated>2024-12-30T00:00:00+00:00</updated>
 	<id>https://devraza.giize.com/blog/feed.xml</id>
+	<entry xml:lang="en">
+		<title>RAID with btrfs</title>
+		<published>2024-12-30T00:00:00+00:00</published>
+		<updated>2024-12-30T00:00:00+00:00</updated>
+		<link href="https://devraza.giize.com/blog/btrfs-raid-setup/" type="text/html"/>
+		<id>https://devraza.giize.com/blog/btrfs-raid-setup/</id>
+		<content type="html">&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;a class=&quot;zola-anchor&quot; href=&quot;#introduction&quot; aria-label=&quot;Anchor link for: introduction&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+&lt;h2 id=&quot;what-is-raid&quot;&gt;What is RAID?&lt;a class=&quot;zola-anchor&quot; href=&quot;#what-is-raid&quot; aria-label=&quot;Anchor link for: what-is-raid&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Shamelessly copying from the &lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;RAID&quot;&gt;relevant Wikipedia page&lt;&#x2F;a&gt;:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;RAID (&#x2F;reɪd&#x2F;; redundant array of inexpensive disks or redundant array of independent disks) is a data storage virtualization technology that combines multiple physical data storage components into one or more logical units for the purposes of data redundancy, performance improvement, or both.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;That definition works well enough in case you don&#x27;t already know what RAID is, which I doubt is the case for anyone reading this post.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;why-use-it&quot;&gt;Why use it?&lt;a class=&quot;zola-anchor&quot; href=&quot;#why-use-it&quot; aria-label=&quot;Anchor link for: why-use-it&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Ever had a hard drive containing important data - without any backups - fail? Or, a little less likely, had a mission-critical file server break for a few hours because a drive failed? These are the two biggest problems that RAID solves.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;that-s-great-but-how-do-i-use-it&quot;&gt;That&#x27;s great, but how do I use it?&lt;a class=&quot;zola-anchor&quot; href=&quot;#that-s-great-but-how-do-i-use-it&quot; aria-label=&quot;Anchor link for: that-s-great-but-how-do-i-use-it&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+&lt;p&gt;And finally, we have the main body of this blog post! While frustatingly looking up how to do &lt;em&gt;slightly&lt;&#x2F;em&gt; weird things with RAID using &lt;code&gt;btrfs&lt;&#x2F;code&gt;, I found the lack of documentation annoying - so, I thought I&#x27;d make this blog post to aggregate a bunch of commands.&lt;&#x2F;p&gt;
+&lt;p&gt;And so, the list:&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;raid1&quot;&gt;RAID1&lt;a class=&quot;zola-anchor&quot; href=&quot;#raid1&quot; aria-label=&quot;Anchor link for: raid1&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Setting up RAID1 with two disks:&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#151515;color:#e8e8d3;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;mkdir&lt;&#x2F;span&gt;&lt;span&gt; &#x2F;mnt&#x2F;raid1 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# make the RAID1 pool
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;btrfs&lt;&#x2F;span&gt;&lt;span&gt; device add &#x2F;dev&#x2F;sdA1 &#x2F;mnt&#x2F;raid1 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# add the first device
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;btrfs&lt;&#x2F;span&gt;&lt;span&gt; device add &#x2F;dev&#x2F;sdB1 &#x2F;mnt&#x2F;raid1 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# add the second device
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Setting up RAID1 when you already have a disk with some data on it and want to add another:&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#151515;color:#e8e8d3;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;btrfs&lt;&#x2F;span&gt;&lt;span&gt; device add &#x2F;dev&#x2F;sdB1 &#x2F;mnt&#x2F;raid1 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# add the second device
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;btrfs&lt;&#x2F;span&gt;&lt;span&gt; balance start&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt; -dconvert&lt;&#x2F;span&gt;&lt;span&gt;=raid1&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt; -mconvert&lt;&#x2F;span&gt;&lt;span&gt;=raid1 &#x2F;mnt&#x2F;raid1 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# distribute data to get the array set up
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;raid0&quot;&gt;RAID0&lt;a class=&quot;zola-anchor&quot; href=&quot;#raid0&quot; aria-label=&quot;Anchor link for: raid0&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Setting up RAID0 with two disks - exactly the same as with RAID1:&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#151515;color:#e8e8d3;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;mkdir&lt;&#x2F;span&gt;&lt;span&gt; &#x2F;mnt&#x2F;raid1 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# make the RAID1 pool
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;btrfs&lt;&#x2F;span&gt;&lt;span&gt; device add &#x2F;dev&#x2F;sdA1 &#x2F;mnt&#x2F;raid0 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# add the first device
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;btrfs&lt;&#x2F;span&gt;&lt;span&gt; device add &#x2F;dev&#x2F;sdB1 &#x2F;mnt&#x2F;raid0 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# add the second device
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+You can also continue to add more devices. The total storage available at the end of the process is the sum of the storage available on each drive:&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#151515;color:#e8e8d3;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;btrfs&lt;&#x2F;span&gt;&lt;span&gt; device add &#x2F;dev&#x2F;sdC1 &#x2F;mnt&#x2F;raid0 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# add the third device
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;btrfs&lt;&#x2F;span&gt;&lt;span&gt; device add &#x2F;dev&#x2F;sdD1 &#x2F;mnt&#x2F;raid0 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# add the fourth device
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# and so on...
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Setting up RAID0 when you already have a disk with some data on it and want to add another:&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#151515;color:#e8e8d3;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;btrfs&lt;&#x2F;span&gt;&lt;span&gt; device add &#x2F;dev&#x2F;sdA1 &#x2F;mnt&#x2F;raid0 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# add the second device
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;btrfs&lt;&#x2F;span&gt;&lt;span&gt; balance start&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt; -dconvert&lt;&#x2F;span&gt;&lt;span&gt;=raid0 &#x2F;mnt&#x2F;raid0 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# distribute data to get the array set up
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;nested-raid-levels&quot;&gt;Nested RAID levels&lt;a class=&quot;zola-anchor&quot; href=&quot;#nested-raid-levels&quot; aria-label=&quot;Anchor link for: nested-raid-levels&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Btrfs also supports RAID10 (or RAID1+0) which is a combination of RAID1 and RAID0 as demonstrated by the following image:
+&lt;img src=&quot;https:&#x2F;&#x2F;devraza.giize.com&#x2F;img&#x2F;raid10.png&quot; alt=&quot;Image demonstrating how RAID10 looks&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;However, as you can see, RAID10 requires &lt;em&gt;n&lt;&#x2F;em&gt; disks where &lt;em&gt;n&lt;&#x2F;em&gt; is an even number greater than or equal to 4. Furthermore, if you tried using devices of varying sizes, space would likely be wasted. So what would you do if you had 3 devices, with, for example, sizes of 1TB, 500GB, and 500GB?&lt;&#x2F;p&gt;
+&lt;p&gt;A possible solution here would be to split the 1TB drive into two equal partitions of 500GB, and pass them to btrfs as independant drives.&lt;&#x2F;p&gt;
+&lt;p&gt;Theoretically, you could also combine the two 500GB drives into a RAID0 partition and combine them through RAID1 with the 1TB drive (creating a nested RAID01&#x2F;RAID0+1 array), but this seems to be unsupported by btrfs.&lt;&#x2F;p&gt;
+&lt;p&gt;In general, setting up a RAID10 array with btrfs looks like this:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#151515;color:#e8e8d3;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;mkdir&lt;&#x2F;span&gt;&lt;span&gt; &#x2F;mnt&#x2F;raid10 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# make the RAID10 pool
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;btrfs&lt;&#x2F;span&gt;&lt;span&gt; device add &#x2F;dev&#x2F;sdA1 &#x2F;dev&#x2F;sdB1 &#x2F;dev&#x2F;sdC1 &#x2F;dev&#x2F;sdD1 &#x2F;mnt&#x2F;raid10 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# add the drives
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt;btrfs&lt;&#x2F;span&gt;&lt;span&gt; balance start&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt; -dconvert&lt;&#x2F;span&gt;&lt;span&gt;=raid10&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ffb964;&quot;&gt; -mconvert&lt;&#x2F;span&gt;&lt;span&gt;=raid10 &#x2F;mnt&#x2F;raid10 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#888888;&quot;&gt;# distribute data to get the array set up
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h1 id=&quot;useful-resources&quot;&gt;Useful resources&lt;a class=&quot;zola-anchor&quot; href=&quot;#useful-resources&quot; aria-label=&quot;Anchor link for: useful-resources&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;carfax.org.uk&#x2F;btrfs-usage&#x2F;&quot;&gt;btrfs disk usage calculator&lt;&#x2F;a&gt; - I found this somewhat useful, but it won&#x27;t tell you how to get whatever configuration you set up to work&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Nested_RAID_levels&quot;&gt;The Wikipedia page on nested RAID levels&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>DNS-level adblock on the go with blocky</title>
 		<published>2024-05-31T00:00:00+00:00</published>
@@ -269,7 +333,7 @@ Lots of devices to read!&lt;&#x2F;li&gt;
 		<link href="https://devraza.giize.com/blog/selfhost-tailscale/" type="text/html"/>
 		<id>https://devraza.giize.com/blog/selfhost-tailscale/</id>
 		<content type="html">&lt;h1 id=&quot;tailscale&quot;&gt;Tailscale&lt;a class=&quot;zola-anchor&quot; href=&quot;#tailscale&quot; aria-label=&quot;Anchor link for: tailscale&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
-&lt;p&gt;&lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;tailscale.com&#x2F;&quot;&gt;Tailscale&lt;&#x2F;a&gt; is a modern tunnel VPN service based on &lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;www.wireguard.com&#x2F;&quot;&gt;WireGuard®&lt;&#x2F;a&gt; which provides a &#x27;free&#x27; and secure means of communication between 
+&lt;p&gt;&lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;tailscale.com&#x2F;&quot;&gt;Tailscale&lt;&#x2F;a&gt; is a modern tunnel VPN service based on &lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;www.wireguard.com&#x2F;&quot;&gt;WireGuard®&lt;&#x2F;a&gt; which provides a &#x27;free&#x27; and secure means of communication between
 devices within a &lt;a rel=&quot;nofollow noreferrer&quot; href=&quot;https:&#x2F;&#x2F;tailscale.com&#x2F;kb&#x2F;1136&#x2F;tailnet&quot;&gt;tailnet&lt;&#x2F;a&gt; - a private network which Tailscale provides its users.&lt;&#x2F;p&gt;
 &lt;p&gt;Essentially, it provides a private and secure way of accessing any of your devices, no matter where you are in the world - a personal WAN encompassing the entire world.&lt;&#x2F;p&gt;
 &lt;p&gt;And on top of this, Tailscale is completely free and open-source! At least, on the surface...&lt;&#x2F;p&gt;
@@ -329,7 +393,7 @@ Headscale&#x27;s a self-hostable, open-source alternative to the Tailscale contr
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;And that&#x27;s it. A self-hosted, &lt;em&gt;truly&lt;&#x2F;em&gt; open-source Wireguard®-based VPN is now at your fingertips. Enjoy! Oh, but please read the conclusion before doing that:&lt;&#x2F;p&gt;
 &lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;a class=&quot;zola-anchor&quot; href=&quot;#conclusion&quot; aria-label=&quot;Anchor link for: conclusion&quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
-&lt;p&gt;For those of you who wish to have access to something like Tailscale but value your privacy above all, you would genuinely be greatful for Headscale. 
+&lt;p&gt;For those of you who wish to have access to something like Tailscale but value your privacy above all, you would genuinely be greatful for Headscale.
 However, I&#x27;ve found that some are fine with what Tailscale &lt;em&gt;does&lt;&#x2F;em&gt; provide in regards to FOSS, and are satisfied by the raw convenience and simplicity of a non-selfhosted Tailscale control server - exactly what it hopes to provide, as shown by their self-description on their website: &#x27;a zero-config, no-fuss VPN [provider]&#x27;.&lt;&#x2F;p&gt;
 &lt;p&gt;Or you could just settle with bare Wireguard®.&lt;&#x2F;p&gt;
 </content>

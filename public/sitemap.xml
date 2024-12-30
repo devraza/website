@@ -11,6 +11,10 @@
         <lastmod>2024-05-31</lastmod>
     </url>
     <url>
+        <loc>https://devraza.giize.com/blog/btrfs-raid-setup/</loc>
+        <lastmod>2024-12-30</lastmod>
+    </url>
+    <url>
         <loc>https://devraza.giize.com/blog/hoaxes-overview/</loc>
         <lastmod>2024-01-04</lastmod>
     </url>
@@ -63,6 +67,9 @@
         <loc>https://devraza.giize.com/tags/blocky/</loc>
     </url>
     <url>
+        <loc>https://devraza.giize.com/tags/btrfs/</loc>
+    </url>
+    <url>
         <loc>https://devraza.giize.com/tags/hacking/</loc>
     </url>
     <url>
@@ -84,6 +91,9 @@
         <loc>https://devraza.giize.com/tags/homelab/</loc>
     </url>
     <url>
+        <loc>https://devraza.giize.com/tags/nas/</loc>
+    </url>
+    <url>
         <loc>https://devraza.giize.com/tags/nfc/</loc>
     </url>
     <url>
@@ -91,6 +101,18 @@
     </url>
     <url>
         <loc>https://devraza.giize.com/tags/privacy/</loc>
+    </url>
+    <url>
+        <loc>https://devraza.giize.com/tags/raid/</loc>
+    </url>
+    <url>
+        <loc>https://devraza.giize.com/tags/raid0/</loc>
+    </url>
+    <url>
+        <loc>https://devraza.giize.com/tags/raid1/</loc>
+    </url>
+    <url>
+        <loc>https://devraza.giize.com/tags/raid10/</loc>
     </url>
     <url>
         <loc>https://devraza.giize.com/tags/searxng/</loc>
