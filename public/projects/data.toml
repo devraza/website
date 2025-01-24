@@ -1,6 +1,38 @@
 [[project]]
+name = "newton"
+desc = "My set of solutions to the problems on Code Forces."
+tags = ["python", "rust", "c", "competitive programming", "math"]
+links = [
+  { name = "git", url = "https://git.devraza.giize.com/devraza/newton" },
+]
+
+[[project]]
+name = "oily-solutions"
+desc = "My set of solutions to the problems presented by Project Euler."
+tags = ["rust", "competitive programming", "math"]
+links = [
+  { name = "git", url = "https://git.devraza.giize.com/devraza/oily-solutions" },
+]
+
+[[project]]
+name = "fireguide"
+desc = "Extremely simple TUI program to create a heatmap based on habits."
+tags = ["python", "rich", "TUI"]
+links = [
+  { name = "git", url = "https://git.devraza.giize.com/devraza/fireguide" },
+]
+
+[[project]]
+name = "tinypc"
+desc = "LMC assembly interpreter written in pure safe Rust. `[Deprecated]`"
+tags = ["LMC", "assembly", "rust", "interpreter"]
+links = [
+  { name = "git", url = "https://git.devraza.giize.com/devraza/tinypc" },
+]
+
+[[project]]
 name = "webchain"
-desc = "A fast and minimal bookmark manager."
+desc = "A fast and minimal bookmark manager. `[Deprecated]`"
 tags = ["rocket", "web", "rust", "bookmark", "links"]
 links = [
   { name = "git", url = "https://git.devraza.giize.com/devraza/webchain" },
@@ -24,7 +56,7 @@ links = [
 
 [[project]]
 name = "Ambition"
-desc = "A fast-paced 2D MMORPG."
+desc = "A fast-paced 2D MMORPG. `[Deprecated]`"
 tags = ["rust", "bevy", "mmorpg"]
 links = [
   { name = "git", url = "https://git.devraza.giize.com/devraza/ambition" },
