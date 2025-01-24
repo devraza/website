@@ -13,10 +13,10 @@ I'm a programmer, entry-level cybersecurity specialist, system administrator, an
 I also happen to be a devoted rustacean and a devout follower of the self-hosted way of life.
 
 My skills in programming and scripting languages I've used so far are as follows:
-- Advanced: `Python`, `Nix` 
-- Intermediate: `Rust`, `Go`, `E-Lisp`
-- Beginner: `Julia`, `Lua`
+- Advanced: `Python`, `Rust`
+- Intermediate: `Nix`, `Go`
+- Beginner: `Julia`, `Lua`, `C`
 
 However, I consider myself able to work to a reasonable degree with any modern programming language.
 
-Other *tools* that I can work with include `git`, `linux`, `inkscape`, and `GIMP`.
+Other *tools* that I can work with include Git, Linux, Inkscape, and GIMP.
