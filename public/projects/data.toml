@@ -15,19 +15,19 @@ links = [
 ]
 
 [[project]]
+name = "tinypc"
+desc = "LMC assembly interpreter written in pure safe Rust."
+tags = ["LMC", "assembly", "rust", "interpreter"]
+links = [
+  { name = "git", url = "https://git.devraza.giize.com/devraza/tinypc" },
+]
+
+[[project]]
 name = "fireguide"
 desc = "Extremely simple TUI program to create a heatmap based on habits."
 tags = ["python", "rich", "TUI"]
 links = [
   { name = "git", url = "https://git.devraza.giize.com/devraza/fireguide" },
-]
-
-[[project]]
-name = "tinypc"
-desc = "LMC assembly interpreter written in pure safe Rust. `[Deprecated]`"
-tags = ["LMC", "assembly", "rust", "interpreter"]
-links = [
-  { name = "git", url = "https://git.devraza.giize.com/devraza/tinypc" },
 ]
 
 [[project]]
