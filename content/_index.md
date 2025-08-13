@@ -17,6 +17,4 @@ My skills in programming and scripting languages I've used so far are as follows
 - Intermediate: `Nix`, `Go`
 - Beginner: `Julia`, `Lua`, `C`
 
-However, I consider myself able to work to a reasonable degree with any modern programming language.
-
-Other *tools* that I can work with include Git, Linux, Inkscape, and GIMP.
+Other tools that I often work with include git, Linux in general, Inkscape, and GIMP.
