@@ -7,76 +7,12 @@ links = [
 ]
 
 [[project]]
-name = "oily-solutions"
-desc = "My set of solutions to the problems presented by Project Euler."
-tags = ["rust", "competitive programming", "math"]
-links = [
-  { name = "git", url = "https://git.devraza.giize.com/devraza/oily-solutions" },
-]
-
-[[project]]
-name = "tinypc"
-desc = "LMC assembly interpreter written in pure safe Rust."
-tags = ["LMC", "assembly", "rust", "interpreter"]
-links = [
-  { name = "git", url = "https://git.devraza.giize.com/devraza/tinypc" },
-]
-
-[[project]]
-name = "fireguide"
-desc = "Extremely simple TUI program to create a heatmap based on habits."
-tags = ["python", "rich", "TUI"]
-links = [
-  { name = "git", url = "https://git.devraza.giize.com/devraza/fireguide" },
-]
-
-[[project]]
-name = "webchain"
-desc = "A fast and minimal bookmark manager. `[Deprecated]`"
-tags = ["rocket", "web", "rust", "bookmark", "links"]
-links = [
-  { name = "git", url = "https://git.devraza.giize.com/devraza/webchain" },
-]
-
-[[project]]
 name = "bunbun"
 desc = "A simple and adorable sysinfo utility."
 tags = ["sysinfo", "neofetch", "rust", "cli"]
 links = [
   { name = "git", url = "https://git.devraza.giize.com/devraza/bunbun" },
-]
-
-[[project]]
-name = "vaporise"
-desc = "A simple, featureful and blazingly fast memory-safe alternative to `rm`."
-tags = ["rm", "rust", "alternative", "cli"]
-links = [
-  { name = "git", url = "https://git.devraza.giize.com/devraza/vaporise" },
-]
-
-[[project]]
-name = "Ambition"
-desc = "A fast-paced 2D MMORPG. `[Deprecated]`"
-tags = ["rust", "bevy", "mmorpg"]
-links = [
-  { name = "git", url = "https://git.devraza.giize.com/devraza/ambition" },
-]
-
-[[project]]
-name = "sage"
-desc = "A collection of utilities for my home lab."
-tags = ["rust", "homelab", "selfhosted", "utility", "cli"]
-links = [
-  { name = "git", url = "https://git.devraza.giize.com/devraza/sage" },
-]
-
-[[project]]
-name = "rustboyadvance-ng"
-desc = "A rusty Nintendo™ Game Boy Advance emulator and debugger. `[Deprecated]`"
-tags = ["rust", "gameboy", "emulator"]
-links = [
-  { name = "git", url = "https://git.devraza.giize.com/devraza/rustboyadvance-ng" },
-  { name = "parent", url = "https://github.com/michelhe/rustboyadvance-ng" },
+  { name = "nixpkgs", url = "https://search.nixos.org/packages?channel=unstable&show=bunbun" },
 ]
 
 [[project]]
@@ -96,8 +32,57 @@ links = [
 ]
 
 [[project]]
+name = "vaporise"
+desc = "A simple, featureful and blazingly fast memory-safe alternative to `rm`."
+tags = ["rm", "rust", "alternative", "cli"]
+links = [
+  { name = "git", url = "https://git.devraza.giize.com/devraza/vaporise" },
+]
+
+[[project]]
+name = "oily-solutions"
+desc = "My set of solutions to the problems presented by Project Euler."
+tags = ["rust", "competitive programming", "math"]
+links = [
+  { name = "git", url = "https://git.devraza.giize.com/devraza/oily-solutions" },
+]
+
+[[project]]
+name = "tinypc"
+desc = "LMC assembly interpreter written in pure safe Rust. `[Archived]`"
+tags = ["LMC", "assembly", "rust", "interpreter"]
+links = [
+  { name = "git", url = "https://git.devraza.giize.com/devraza/tinypc" },
+]
+
+[[project]]
+name = "fireguide"
+desc = "Extremely simple TUI program to create a heatmap based on habits. `[Archived]`"
+tags = ["python", "rich", "TUI"]
+links = [
+  { name = "git", url = "https://git.devraza.giize.com/devraza/fireguide" },
+]
+
+[[project]]
+name = "Ambition"
+desc = "A fast-paced 2D MMORPG. `[Archived]`"
+tags = ["rust", "bevy", "mmorpg"]
+links = [
+  { name = "git", url = "https://git.devraza.giize.com/devraza/ambition" },
+]
+
+[[project]]
+name = "rustboyadvance-ng"
+desc = "A rusty Nintendo™ Game Boy Advance emulator and debugger. `[Archived]`"
+tags = ["rust", "gameboy", "emulator"]
+links = [
+  { name = "git", url = "https://git.devraza.giize.com/devraza/rustboyadvance-ng" },
+  { name = "parent", url = "https://github.com/michelhe/rustboyadvance-ng" },
+]
+
+[[project]]
 name = "DianciEmacs"
-desc = "A minimal and elegant Emacs configuration framework. `[Deprecated]`"
+desc = "A minimal and elegant Emacs configuration framework. `[Archived]`"
 tags = ["emacs", "config", "diancie"]
 links = [
   { name = "git", url = "https://git.devraza.giize.com/devraza/dianciemacs" },
@@ -105,7 +90,7 @@ links = [
 
 [[project]]
 name = "Kagayaki for Emacs"
-desc = "A gorgeously soft colorscheme for Emacs. `[Deprecated]`"
+desc = "A gorgeously soft colorscheme for Emacs. `[Archived]`"
 tags = ["emacs", "colorscheme", "theme", "dark"]
 links = [
   { name = "git", url = "https://git.devraza.giize.com/devraza/kagayaki-emacs" },
@@ -113,7 +98,7 @@ links = [
 
 [[project]]
 name = "Ambition (legacy)"
-desc = "A fast-paced, text-based massively multiplayer role-playing game. `[Deprecated]`"
+desc = "A fast-paced, text-based massively multiplayer role-playing game. `[Archived]`"
 tags = ["go", "ebiten", "game", "mmorpg"]
 links = [
   { name = "git", url = "https://git.devraza.giize.com/ambition/legacy" },
@@ -121,7 +106,7 @@ links = [
 
 [[project]]
 name = "Catchtwo"
-desc = "A second generation, free Pokétwo autocatcher, made to stop people from wasting their money on 'premium' alternatives. `[Deprecated]`"
+desc = "A second generation, free Pokétwo autocatcher, made to stop people from wasting their money on 'premium' alternatives. `[Archived]`"
 tags = ["pokétwo", "pokémon", "discord", "userbot"]
 links = [
   { name = "git", url = "https://github.com/devraza/catchtwo" },
