@@ -48,6 +48,22 @@ links = [
 ]
 
 [[project]]
+name = "nixle"
+desc = "A Wordle-like web Linux operating system guesser game. `[Archived]`"
+tags = ["linux", "wordle", "webgame"]
+links = [
+  { name = "git", url = "https://git.devraza.giize.com/devraza/nixle" },
+]
+
+[[project]]
+name = "oxysum"
+desc = "An primitive hashing algorithm written in pure safe Rust. `[Archived]`"
+tags = ["crypto", "hashing", "rust"]
+links = [
+  { name = "git", url = "https://git.devraza.giize.com/devraza/oxysum" },
+]
+
+[[project]]
 name = "tinypc"
 desc = "LMC assembly interpreter written in pure safe Rust. `[Archived]`"
 tags = ["LMC", "assembly", "rust", "interpreter"]
